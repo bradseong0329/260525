@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>스마트 시티 | Futec Solutions Inc.</title>
+    <meta name="description" content="Vaidio AI 영상분석으로 교통 흐름을 최적화하고 도시 안전을 강화합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .solution-hero__image {
+        width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      .solution-stats {
+        display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        justify-content: center;
+      }
+      .solution-stat {
+        text-align: center; min-width: 120px;
+      }
+      .solution-stat__number {
+        font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db);
+      }
+      .solution-stat__label {
+        font-size: 0.9rem; color: #555; margin-top: 0.25rem;
+      }
+      .card__category {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+        color: var(--color-primary, #1a56db); letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card__challenge, .card__solution {
+        margin-bottom: 0.75rem;
+      }
+      @media (max-width: 600px) {
+        .solution-stats { gap: 1rem; }
+        .solution-stat__number { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio City — AI로 교통과 도시 안전을 혁신합니다</span>
+              <span class="lang-en">Vaidio City — Smarter Traffic, Safer Streets</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI Vision Platform은 모든 카메라를 스마트 도시 모니터링 및 분석 장치로 전환합니다. 사용이 쉽고 정확도가 높아 지자체의 원활한 도시 운영을 돕습니다.</span>
+              <span class="lang-en">The Vaidio AI Vision Platform turns any camera into a smart city monitoring and analytics device—easy to use and highly accurate, helping municipalities keep things moving.</span>
+            </p>
+            <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 목록</span>
+                <span class="lang-en">All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top:0;">
+          <img
+            class="solution-hero__image"
+            src="assets/img/vaidio/hero_smartcities.jpg"
+            onerror="this.src='assets/img/animation_smart city.png'"
+            alt="스마트 시티" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="solutions.html"><span class="lang-ko">솔루션</span><span class="lang-en">Solutions</span></a></li>
+            <li>
+              <span class="lang-ko">스마트 시티</span>
+              <span class="lang-en">Smart Cities</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 주요 지표 -->
+      <section class="section section--light" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="solution-stats">
+            
+            <div class="solution-stat">
+              <div class="solution-stat__number">실시간</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">신호 최적화</span>
+                <span class="lang-en">Traffic Light Optimization</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">즉각</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">사고 감지 대응</span>
+                <span class="lang-en">Incident Detection Response</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">Sub-2초</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">포렌식 검색</span>
+                <span class="lang-en">Forensic Video Search</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">30+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">AI 분석 엔진</span>
+                <span class="lang-en">AI Analytics Engines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 핵심 기능 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">핵심 기능 및 효과</span>
+              <span class="lang-en">Key Features &amp; Benefits</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">교통 흐름 최적화</span>
+                <span class="lang-en">Optimize Traffic Flow</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">피크 시간대와 고밀도 구역에서 신호 주기를 동적으로 조정하여 병목 현상을 줄이고 교통 흐름을 개선합니다.</span>
+                <span class="lang-en">Dynamically adjust traffic light timing to reduce bottlenecks and improve flow during peak hours and in high-density areas.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">보행자·차량 안전 강화</span>
+                <span class="lang-en">Improve Pedestrian & Vehicular Safety</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">사고·역주행·적신호 위반·무단횡단을 실시간으로 감지하여 즉각적인 조치를 취하고 안전사고를 예방합니다.</span>
+                <span class="lang-en">Detect crashes, wrong-way driving, red-light violations, and jaywalking in real time to enable immediate response and prevent accidents.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">교통 관리 효율화</span>
+                <span class="lang-en">Enhance Traffic Management Efficiency</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">자동화된 차량·보행자 카운트와 히트맵으로 혼잡 지점을 파악하고 교차로 설계 및 도로 레이아웃을 개선합니다.</span>
+                <span class="lang-en">Automated vehicle and pedestrian counts and heat maps identify congestion hotspots to improve intersection design and road layouts.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">사고 후 포렌식 조사</span>
+                <span class="lang-en">Post-Incident Forensic Investigation</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">번호판 인식·차량 추적 등 AI 에이전트를 활용해 장기적 안전 개선을 위한 정밀한 사고 후 분석을 수행합니다.</span>
+                <span class="lang-en">Use AI agents like LPR and vehicle tracking to conduct thorough post-incident evaluations for long-term safety improvements.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">위험 요소 선제 감지</span>
+                <span class="lang-en">Proactive Hazard Alerts</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">정차 차량, 음주 운전 의심, 노면 위험(눈·잔해물) 등을 즉시 감지하여 당국에 알림을 전송합니다.</span>
+                <span class="lang-en">Detect hazards such as stalled vehicles, impaired driving, or road debris instantly and send alerts to authorities.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 과제 및 솔루션 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">주요 과제와 Vaidio 솔루션</span>
+              <span class="lang-en">Key Challenges &amp; Vaidio Solutions</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">교통 혼잡 및 병목</span>
+                <span class="lang-en">Traffic Congestion & Bottlenecks</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">실시간 교통 데이터 부재로 신호 최적화와 혼잡 관리가 어렵습니다.</span>
+                  <span class="lang-en">Lack of real-time traffic data makes signal optimization and congestion management difficult.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">AI 기반 실시간 신호 최적화와 종합 히트맵으로 즉각적인 혼잡 해소 조치를 지원합니다.</span>
+                  <span class="lang-en">AI-powered real-time signal optimization and comprehensive heat maps enable immediate congestion mitigation.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">교통사고 대응 지연</span>
+                <span class="lang-en">Delayed Incident Response</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">사고·정차 차량·장애물을 신속히 발견하지 못해 2차 사고가 발생합니다.</span>
+                  <span class="lang-en">Failure to quickly detect accidents, stalled vehicles, or obstacles leads to secondary incidents.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">실시간 사고 감지로 즉각적인 개입을 가능하게 하여 혼잡 장기화와 안전 위협을 방지합니다.</span>
+                  <span class="lang-en">Real-time incident detection enables quick interventions to prevent prolonged congestion and safety hazards.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">수작업 교통 모니터링 비용</span>
+                <span class="lang-en">Manual Traffic Monitoring Costs</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">교통 데이터 수집을 위한 수작업 집계에 많은 인력과 비용이 소요됩니다.</span>
+                  <span class="lang-en">Manual counting for traffic data collection requires significant manpower and cost.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">자동화된 차량·보행자 집계로 수작업을 대체하고 운영 비용을 절감합니다.</span>
+                  <span class="lang-en">Automated vehicle and pedestrian counting replaces manual work and reduces operational costs.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vaidio 선택 이유 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio를 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">유일한 신호 직접 분석</span>
+                <span class="lang-en">Only AI That Analyzes Traffic Lights Directly</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">카메라 데이터에서 직접 신호 패턴을 관리·분석할 수 있는 유일한 AI Vision Platform입니다.</span>
+                <span class="lang-en">The only AI Vision Platform capable of managing and analyzing traffic light patterns directly from camera data.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">모든 카메라를 스마트 장치로</span>
+                <span class="lang-en">Turn Any Camera Smart</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">신규·기존 IP 카메라를 막론하고 즉시 스마트 모니터링 장치로 전환합니다.</span>
+                <span class="lang-en">Turn any new or existing IP camera into a smart city monitoring device immediately.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">간편한 사용성</span>
+                <span class="lang-en">Easy to Use & Highly Accurate</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">직관적인 인터페이스와 높은 분석 정확도로 교통 엔지니어가 손쉽게 활용할 수 있습니다.</span>
+                <span class="lang-en">Intuitive interface and high accuracy let traffic engineers leverage AI without complex setups.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header" style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">스마트 시티 AI 영상분석 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Smart Cities Operations?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 검토해 보세요.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to explore the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">다른 솔루션 보기</span>
+                <span class="lang-en">View All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

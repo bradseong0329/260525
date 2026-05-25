@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>교육 캠퍼스 | Futec Solutions Inc.</title>
+    <meta name="description" content="Vaidio AI 영상분석으로 캠퍼스 안전을 강화하고 학생과 교직원을 보호합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .solution-hero__image {
+        width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      .solution-stats {
+        display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        justify-content: center;
+      }
+      .solution-stat {
+        text-align: center; min-width: 120px;
+      }
+      .solution-stat__number {
+        font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db);
+      }
+      .solution-stat__label {
+        font-size: 0.9rem; color: #555; margin-top: 0.25rem;
+      }
+      .card__category {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+        color: var(--color-primary, #1a56db); letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card__challenge, .card__solution {
+        margin-bottom: 0.75rem;
+      }
+      @media (max-width: 600px) {
+        .solution-stats { gap: 1rem; }
+        .solution-stat__number { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vision AI로 캠퍼스 안전을 실현합니다</span>
+              <span class="lang-en">Campus Safety with Vision AI</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">기존 카메라를 실시간 안전 시스템으로 전환합니다. AI 기반 위협 감지로 사건 발생 전 선제적으로 대응하여 학생과 교직원을 보호합니다.</span>
+              <span class="lang-en">Turn your existing cameras into real-time safety systems. AI-powered threat detection prevents incidents before they happen to protect students and staff.</span>
+            </p>
+            <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 목록</span>
+                <span class="lang-en">All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top:0;">
+          <img
+            class="solution-hero__image"
+            src="assets/img/vaidio/hero_education.png"
+            onerror="this.src='assets/img/animation_Education Campus.png'"
+            alt="교육 캠퍼스" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="solutions.html"><span class="lang-ko">솔루션</span><span class="lang-en">Solutions</span></a></li>
+            <li>
+              <span class="lang-ko">교육 캠퍼스</span>
+              <span class="lang-en">Education Campus</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 주요 지표 -->
+      <section class="section section--light" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="solution-stats">
+            
+            <div class="solution-stat">
+              <div class="solution-stat__number">30+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">AI 분석 엔진</span>
+                <span class="lang-en">AI Analytics Engines</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">Sub-2초</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">영상 검색 속도</span>
+                <span class="lang-en">Search Speed</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">0건</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">카메라 교체</span>
+                <span class="lang-en">Camera Upgrades Required</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">실시간</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">모바일 알림</span>
+                <span class="lang-en">Mobile Alerts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 핵심 기능 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">핵심 기능 및 효과</span>
+              <span class="lang-en">Key Features &amp; Benefits</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">사건 예방</span>
+                <span class="lang-en">Prevent Incidents Before They Happen</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">가시적 무기, 블랙리스트 차량 번호판, 미인가 인원을 출입구 근처에서 즉시 감지합니다.</span>
+                <span class="lang-en">Instantly detect visible weapons, flagged license plates, or unauthorized individuals near entrances.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">학생 및 교직원 보호</span>
+                <span class="lang-en">Protect Students and Staff</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">미인가 픽업·배회·방과 후 시설 접근을 모니터링하고 실시간 알림을 전송합니다.</span>
+                <span class="lang-en">Monitor for unauthorized pickups, loitering, and after-hours property access with real-time alerts.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">출입 통제 연동</span>
+                <span class="lang-en">Access Control Integration</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">출입통제 시스템과 연동하여 Vaidio 커스텀 알림 기반으로 시설 및 지정 구역을 보호합니다.</span>
+                <span class="lang-en">Integrates with access control systems to secure facilities and designated areas based on customizable alerts.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">보안 인력 부담 경감</span>
+                <span class="lang-en">Reduce Security Staff Burden</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">캠퍼스 전반에 걸친 위협 감지와 사건 추적을 자동화하여 보안 인력의 업무 부담을 줄입니다.</span>
+                <span class="lang-en">Automate threat detection and incident tracking across campuses to reduce security staff workload.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">광역 배포 용이</span>
+                <span class="lang-en">Scale Across the District</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">학생 정보 시스템 및 출입통제 플랫폼과 쉽게 연동되며 구역·사이트별 배포가 가능합니다.</span>
+                <span class="lang-en">Easily integrates with student information systems and access control platforms, deployable by camera or site.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 과제 및 솔루션 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">주요 과제와 Vaidio 솔루션</span>
+              <span class="lang-en">Key Challenges &amp; Vaidio Solutions</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">교내 총기·흉기 위협</span>
+                <span class="lang-en">Weapons Threats on Campus</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">총기 또는 흉기 소지 의심자를 신속히 파악하고 대응하기 어렵습니다.</span>
+                  <span class="lang-en">Quickly identifying and responding to suspected individuals carrying firearms or weapons is difficult.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">AI가 가시적 무기를 실시간 감지하고 보안팀 및 관리자의 모바일 기기에 즉시 알림을 전송합니다.</span>
+                  <span class="lang-en">AI detects visible weapons in real time and sends immediate alerts to security teams and administrators' mobile devices.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">미인가 방문객 접근</span>
+                <span class="lang-en">Unauthorized Visitor Access</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">미인가 방문객이나 알려진 위협 인물이 출입구를 통해 시설에 접근할 수 있습니다.</span>
+                  <span class="lang-en">Unauthorized visitors or known threats may gain access to facilities through entry points.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">출입구에서 방문객 ID를 검증하고 위협 인물 및 미인가 접근을 실시간 알림으로 즉시 감지합니다.</span>
+                  <span class="lang-en">Verify visitor IDs at access points and instantly detect threats and unauthorized access with real-time alerts.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">방과 후 시설 침입·훼손</span>
+                <span class="lang-en">After-Hours Intrusions & Vandalism</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">방과 후 침입, 기물 파손, 시설 오남용을 감시할 인력이 부족합니다.</span>
+                  <span class="lang-en">Insufficient staff to monitor after-hours intrusions, vandalism, or misuse of school property.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">주요 위치에서 장면 변화·움직임·침입 감지 시 즉시 알림을 전송하여 원격 감시를 가능하게 합니다.</span>
+                  <span class="lang-en">Push alerts for scene changes, motion, or intrusion after hours at critical locations, enabling remote oversight.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vaidio 선택 이유 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio를 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">30+ 정확한 AI 엔진</span>
+                <span class="lang-en">30+ Accurate AI Engines</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">10년 이상 3,000여 개 객체로 훈련된 가장 정확한 AI 분석 엔진입니다.</span>
+                <span class="lang-en">The most accurate AI—30+ engines trained over 10+ years on 3,000+ objects.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">하드웨어 독립성</span>
+                <span class="lang-en">No Hardware Lock-In</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">모든 주요 VMS 및 기존 카메라 인프라와 호환되어 교체 비용이 없습니다.</span>
+                <span class="lang-en">Works with all major VMSs and existing camera infrastructure—no replacement required.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">실시간 + 검색 가능</span>
+                <span class="lang-en">Real-Time + Searchable</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">즉각적인 알림과 Sub-2초 포렌식 영상 검색으로 조사 효율을 극대화합니다.</span>
+                <span class="lang-en">Instant alerts plus sub-2-second forensic video search for maximum investigation efficiency.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">미래 지향적 확장성</span>
+                <span class="lang-en">Future-Proof Scalability</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">플로팅 라이선스와 워크로드 최적화로 학교·구 전체에 유연하게 확장 가능합니다.</span>
+                <span class="lang-en">Floating licenses and workload optimization enable flexible scaling across schools and districts.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header" style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">교육 캠퍼스 AI 영상분석 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Education Campus Operations?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 검토해 보세요.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to explore the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">다른 솔루션 보기</span>
+                <span class="lang-en">View All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

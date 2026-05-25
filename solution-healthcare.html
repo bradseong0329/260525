@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>헬스케어 / 병원 | Futec Solutions Inc.</title>
+    <meta name="description" content="Vaidio AI 영상분석으로 의료 시설의 위험을 줄이고 컴플라이언스를 강화하며 환자와 직원을 보호합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .solution-hero__image {
+        width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      .solution-stats {
+        display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        justify-content: center;
+      }
+      .solution-stat {
+        text-align: center; min-width: 120px;
+      }
+      .solution-stat__number {
+        font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db);
+      }
+      .solution-stat__label {
+        font-size: 0.9rem; color: #555; margin-top: 0.25rem;
+      }
+      .card__category {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+        color: var(--color-primary, #1a56db); letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card__challenge, .card__solution {
+        margin-bottom: 0.75rem;
+      }
+      @media (max-width: 600px) {
+        .solution-stats { gap: 1rem; }
+        .solution-stat__number { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">더 안전하고 스마트한 의료 시설을 구현합니다</span>
+              <span class="lang-en">Empower Safer, Smarter Healthcare Facilities</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI 영상분석은 의료 환경에 지능형 분석을 도입하여 위험 감소, 컴플라이언스 강화, 환자·직원 보호, 운영 효율화를 동시에 실현합니다.</span>
+              <span class="lang-en">Vaidio brings intelligent AI analytics to healthcare environments—helping reduce risk, improve compliance, protect staff and patients, and streamline operations.</span>
+            </p>
+            <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 목록</span>
+                <span class="lang-en">All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top:0;">
+          <img
+            class="solution-hero__image"
+            src="assets/img/vaidio/hero_healthcare.png"
+            onerror="this.src='assets/img/animation_healthcare.png'"
+            alt="헬스케어 / 병원" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="solutions.html"><span class="lang-ko">솔루션</span><span class="lang-en">Solutions</span></a></li>
+            <li>
+              <span class="lang-ko">헬스케어 / 병원</span>
+              <span class="lang-en">Healthcare & Hospitals</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 주요 지표 -->
+      <section class="section section--light" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="solution-stats">
+            
+            <div class="solution-stat">
+              <div class="solution-stat__number">30+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">AI 분석 옵션</span>
+                <span class="lang-en">AI Analytics Options</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">Sub-2초</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">영상 포렌식 검색</span>
+                <span class="lang-en">Forensic Video Search</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">HIPAA</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">컴플라이언트</span>
+                <span class="lang-en">Compliant</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">실시간</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">알림 및 대응</span>
+                <span class="lang-en">Alerts & Response</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 핵심 기능 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">핵심 기능 및 효과</span>
+              <span class="lang-en">Key Features &amp; Benefits</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">안전 및 보안 강화</span>
+                <span class="lang-en">Improve Safety & Security</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">실시간으로 공격 행위, 미인가 접근, 불법 침입을 감지하여 폭력·절도·환자 이탈을 방지합니다.</span>
+                <span class="lang-en">Detect aggression, unauthorized access, or trespassing in real time to prevent violence, theft, and patient elopement.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">컴플라이언스 간소화</span>
+                <span class="lang-en">Streamline Compliance</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">PPE 및 위생 컴플라이언스를 모니터링하고 HIPAA, Joint Commission, OSHA 요건을 지원합니다.</span>
+                <span class="lang-en">Monitor PPE and hygiene compliance; support HIPAA, Joint Commission, and OSHA requirements with searchable video evidence.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">운영 효율 향상</span>
+                <span class="lang-en">Boost Operational Efficiency</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">환자 흐름을 추적하고 낙상을 감지하며 인력 배치를 최적화하여 허위 경보를 줄이고 사건 대응을 가속화합니다.</span>
+                <span class="lang-en">Track patient flow, detect falls, and optimize staff allocation to reduce false alarms and speed up incident resolution.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">유연한 배포</span>
+                <span class="lang-en">Flexible Deployment</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">모든 카메라 및 VMS에서 온프레미스·클라우드·하이브리드·SaaS 방식으로 운영 가능합니다.</span>
+                <span class="lang-en">Operates with any camera or VMS—on-premises, cloud, hybrid, or SaaS, avoiding costly replacements.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 과제 및 솔루션 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">주요 과제와 Vaidio 솔루션</span>
+              <span class="lang-en">Key Challenges &amp; Vaidio Solutions</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">직장 내 폭력</span>
+                <span class="lang-en">Workplace Violence</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">응급실, 클리닉, 정신건강 환경에서의 위협이 증가하고 있습니다.</span>
+                  <span class="lang-en">Increased threats in ERs, clinics, and behavioral health settings.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">AI가 공격 징후나 긴장 고조를 즉시 감지하여 직원에게 알림을 전송합니다.</span>
+                  <span class="lang-en">AI detects signs of aggression or stress escalation and alerts staff immediately.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">환자 낙상 위험</span>
+                <span class="lang-en">Patient Fall Risk</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">다양한 치료 환경에서 낙상 및 비감독 이탈 위험이 존재합니다.</span>
+                  <span class="lang-en">Risk of falls and unsupervised exits across care settings.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">환자 낙상이나 침대 이탈 시 즉시 감지하고 알림을 전송하여 안전성과 대응 속도를 향상시킵니다.</span>
+                  <span class="lang-en">Detect and alert when patients fall or leave beds, improving safety and response times.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">PPE 및 위생 컴플라이언스</span>
+                <span class="lang-en">PPE & Hygiene Compliance</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">클리닉, 수술실, 준비 구역에서의 감염 통제 실패 위험이 있습니다.</span>
+                  <span class="lang-en">Infection control failures across clinics, surgical zones, and prep areas.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">실시간 알림과 보고서로 PPE 착용 및 위생 컴플라이언스를 추적합니다.</span>
+                  <span class="lang-en">Track PPE adherence and hygiene compliance with real-time alerts and reporting.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vaidio 선택 이유 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio를 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">커스텀 AI 알림</span>
+                <span class="lang-en">Custom AI Alerts</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">공격 행위, 테일게이팅, PPE 위반, 환자 안전 위험에 맞춤 알림을 설정합니다.</span>
+                <span class="lang-en">Tailor alerts for aggression, tailgating, PPE violations, or patient safety risks.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Sub-2초 검색</span>
+                <span class="lang-en">Sub-2-Second Search</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">수천 시간의 영상에서 신속하게 사건을 찾아 조사 및 문서화 시간을 단축합니다.</span>
+                <span class="lang-en">Rapidly locate incidents across thousands of video hours for fast investigation and documentation.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">프라이버시 보호 AI</span>
+                <span class="lang-en">Privacy-Preserving AI</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">안면 블러 처리와 비PII 추적으로 공공 구역을 HIPAA에 적합하게 모니터링합니다.</span>
+                <span class="lang-en">HIPAA-compliant analytics with facial blurring and non-PII tracking for public areas.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">확장 가능한 AI 라이브러리</span>
+                <span class="lang-en">Scalable AI Library</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">낙상 감지, 객체 추적, 혼잡 모니터링, PPE 등 30+ 분석 엔진 중 선택하거나 커스텀 엔진을 추가합니다.</span>
+                <span class="lang-en">Choose from 30+ analytics or create custom engines—fall detection, object tracking, crowd monitoring, PPE, and more.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header" style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">헬스케어 / 병원 AI 영상분석 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Healthcare & Hospitals Operations?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 검토해 보세요.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to explore the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">다른 솔루션 보기</span>
+                <span class="lang-en">View All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vaidio 영상분석 소프트웨어 | Futec Solutions Inc.</title>
+    <meta name="description"
+      content="Vaidio AI Vision Platform의 30개 이상 AI 분석 엔진과 모듈형 플랫폼으로 영상을 실행 가능한 인사이트로 전환합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      /* ── 탭 UI ── */
+      .analytics-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0; }
+      .analytics-tab {
+        padding: 0.5rem 1.1rem; border: 2px solid #ccc; border-radius: 2rem;
+        background: #fff; cursor: pointer; font-size: 0.9rem; font-weight: 500;
+        transition: all 0.2s;
+      }
+      .analytics-tab.active, .analytics-tab:hover {
+        border-color: var(--color-primary, #1a56db);
+        background: var(--color-primary, #1a56db); color: #fff;
+      }
+      .analytics-panel { display: none; margin-top: 1.5rem; }
+      .analytics-panel.active { display: block; }
+      .analytics-panel__inner { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+      .analytics-panel__img { flex: 0 0 auto; max-width: 420px; width: 100%; border-radius: 8px; }
+      .analytics-panel__content { flex: 1 1 260px; }
+      .analytics-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+      .analytics-tag {
+        padding: 0.3rem 0.75rem; background: #eef2ff; border-radius: 2rem;
+        font-size: 0.8rem; color: #3730a3; font-weight: 500;
+      }
+      /* ── 플랫폼 Hero 이미지 ── */
+      .platform-hero__img {
+        width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      /* ── 지표 배너 ── */
+      .platform-stats { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; padding: 1.5rem 0; }
+      .platform-stat { text-align: center; min-width: 120px; }
+      .platform-stat__num { font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db); }
+      .platform-stat__label { font-size: 0.85rem; color: #555; margin-top: 0.25rem; }
+      @media (max-width: 600px) {
+        .analytics-panel__inner { flex-direction: column; }
+        .analytics-panel__img { max-width: 100%; }
+        .platform-stat__num { font-size: 1.8rem; }
+        .platform-stats { gap: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">영상 인텔리전스를 재정의합니다</span>
+              <span class="lang-en">Redefining Video Intelligence</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">
+                에이전틱 AI가 Vaidio의 모든 기능을 구동하며, 타의 추종을 불허하는 정확도와 성능을 제공합니다.
+              </span>
+              <span class="lang-en">
+                Agentic AI drives every aspect of Vaidio's functionality, for unmatched accuracy and performance.
+              </span>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 보기</span>
+                <span class="lang-en">View Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top: 0;">
+          <img
+            class="platform-hero__img"
+            src="assets/img/vaidio/platform_hero.jpg"
+            onerror="this.onerror=null; this.style.background='linear-gradient(135deg,#1a56db,#0e3a8c)'; this.style.minHeight='200px';"
+            alt="Vaidio AI Vision Platform" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="products.html"><span class="lang-ko">제품</span><span class="lang-en">Products</span></a></li>
+            <li>
+              <span class="lang-ko">Vaidio 영상분석 소프트웨어</span>
+              <span class="lang-en">Vaidio Video Analytics Software</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 4대 핵심 가치 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI Vision이 선택받는 이유</span>
+              <span class="lang-en">Why Vaidio AI Vision</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">🔔 즉각적 알림</span>
+                <span class="lang-en">🔔 Immediate Alerts</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">중요 이벤트를 즉시 통보하여 더 빠른 대응, 안전 강화, 위험 감소를 실현합니다.</span>
+                <span class="lang-en">Instantly get notified of critical events so you can respond faster, enhance safety, and reduce risks.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">🔍 실시간 포렌식 검색</span>
+                <span class="lang-en">🔍 Real-Time Forensic Search</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">수동 검토 대비 1,000배 빠른 속도로 조사 효율과 정확도를 획기적으로 높입니다.</span>
+                <span class="lang-en">Dramatically boost investigation speed and accuracy—1,000x faster than manual review.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">🤖 적응형 AI</span>
+                <span class="lang-en">🤖 Adaptable AI</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">산업별 요구사항에 맞게 AI 분석을 커스터마이즈하여 다양한 비즈니스 운영을 지원합니다.</span>
+                <span class="lang-en">Tailor AI analytics for any industry-specific needs, enabling video intelligence to support diverse business operations.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">🎯 커스텀 영상 분석</span>
+                <span class="lang-en">🎯 Custom Video Analytics</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">특정 사건, 객체, 패턴을 감지하도록 AI를 훈련하여 어떤 카메라도 강력한 인텔리전스 도구로 변환합니다.</span>
+                <span class="lang-en">Train AI to detect specific events, objects, or patterns—turning any camera into a powerful intelligence tool.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI 자동 구성 -->
+      <section class="section section--light">
+        <div class="container">
+          <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1 1 280px;">
+              <h2 class="section__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">AI 기반 자동 구성으로 손쉬운 설치</span>
+                <span class="lang-en">Effortless Setup with AI-Powered Autoconfiguration</span>
+              </h2>
+              <p class="section__subtitle">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">
+                  수동 설정은 이제 AI가 대신합니다. 자동 구성 에이전트가 카메라 장면을 지능적으로 분석하고
+                  적합한 분석 기능을 추천하며 관심 영역(ROI)을 구성하여 배포 시간을 90% 단축합니다.
+                </span>
+                <span class="lang-en">
+                  Skip the manual setup—let AI do the work. Our autoconfiguration agent reduces deployment time by 90%
+                  by intelligently analyzing camera scenes, recommending appropriate analytics functions,
+                  and configuring Regions of Interest (ROIs).
+                </span>
+              </p>
+            </div>
+            <div style="flex: 0 0 auto; max-width: 400px; width: 100%;">
+              <img
+                src="assets/img/vaidio/platform_hero.jpg"
+                onerror="this.style.display='none'"
+                alt="AI 자동 구성"
+                style="width:100%; border-radius:8px;" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 통계 배너 -->
+      <section class="section section--muted" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="platform-stats">
+            <div class="platform-stat">
+              <div class="platform-stat__num">30+</div>
+              <div class="platform-stat__label">
+                <span class="lang-ko">AI 분석 엔진</span>
+                <span class="lang-en">AI Analytics Engines</span>
+              </div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat__num">Sub-2초</div>
+              <div class="platform-stat__label">
+                <span class="lang-ko">포렌식 검색 속도</span>
+                <span class="lang-en">Forensic Search Speed</span>
+              </div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat__num">10년+</div>
+              <div class="platform-stat__label">
+                <span class="lang-ko">AI 훈련 경험</span>
+                <span class="lang-en">Years of AI Training</span>
+              </div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat__num">3,000+</div>
+              <div class="platform-stat__label">
+                <span class="lang-ko">학습 객체 종류</span>
+                <span class="lang-en">Trained Object Types</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 분석 카테고리 탭 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">적응형 · 검증된 AI 영상 분석</span>
+              <span class="lang-en">Adaptable, Proven AI Video Analytics</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">30개 이상의 고급 AI 분석 엔진으로 신규 또는 기존 IP 카메라 모두에 인텔리전스를 추가합니다.</span>
+              <span class="lang-en">Vaidio features more than 30 advanced, proven AI video analytics that add intelligence to any new or existing IP camera.</span>
+            </p>
+          </div>
+
+          <!-- 탭 버튼 -->
+          <div class="analytics-tabs" role="tablist">
+            <button class="analytics-tab active" data-tab="safety" role="tab">
+              <span class="lang-ko">🛡 안전·보안</span>
+              <span class="lang-en">🛡 Safety &amp; Security</span>
+            </button>
+            <button class="analytics-tab" data-tab="access" role="tab">
+              <span class="lang-ko">🔐 출입 통제</span>
+              <span class="lang-en">🔐 Access Control</span>
+            </button>
+            <button class="analytics-tab" data-tab="forensic" role="tab">
+              <span class="lang-ko">🔎 포렌식 검색</span>
+              <span class="lang-en">🔎 Forensic Search</span>
+            </button>
+            <button class="analytics-tab" data-tab="operations" role="tab">
+              <span class="lang-ko">📊 운영 분석</span>
+              <span class="lang-en">📊 Operations</span>
+            </button>
+            <button class="analytics-tab" data-tab="traffic" role="tab">
+              <span class="lang-ko">🚗 교통</span>
+              <span class="lang-en">🚗 Traffic</span>
+            </button>
+            <button class="analytics-tab" data-tab="healthcare" role="tab">
+              <span class="lang-ko">🏥 헬스케어</span>
+              <span class="lang-en">🏥 Healthcare</span>
+            </button>
+          </div>
+
+          <!-- 탭 패널: 안전·보안 -->
+          <div class="analytics-panel active" id="tab-safety">
+            <div class="analytics-panel__inner">
+              <img class="analytics-panel__img"
+                src="assets/img/vaidio/platform_safety.jpg"
+                onerror="this.src='assets/img/animation_public safety.png'"
+                alt="안전·보안 분석" />
+              <div class="analytics-panel__content">
+                <h3>
+                  <span class="lang-ko">안전하고 보안된 공공·민간 공간 구현</span>
+                  <span class="lang-en">Create Smarter, Safer Spaces</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">잠재적 위협을 신속·정확하게 감지하고 실시간 알림으로 즉각 대응합니다.</span>
+                  <span class="lang-en">Provide rapid, accurate detection and real-time alerts to potential threats.</span>
+                </p>
+                <div class="analytics-tags">
+                  <span class="analytics-tag lang-ko">침입 감지</span><span class="analytics-tag lang-en">Intrusion Detection</span>
+                  <span class="analytics-tag lang-ko">이상 행동 감지</span><span class="analytics-tag lang-en">Anomaly Detection</span>
+                  <span class="analytics-tag lang-ko">혼잡도 분석</span><span class="analytics-tag lang-en">Crowd Analysis</span>
+                  <span class="analytics-tag lang-ko">낙상 감지</span><span class="analytics-tag lang-en">Fall Detection</span>
+                  <span class="analytics-tag lang-ko">배회 감지</span><span class="analytics-tag lang-en">Loitering</span>
+                  <span class="analytics-tag lang-ko">객체 집계·감지</span><span class="analytics-tag lang-en">Object Counting &amp; Detection</span>
+                  <span class="analytics-tag lang-ko">유기물·분실물 감지</span><span class="analytics-tag lang-en">Object Left Behind/Removed</span>
+                  <span class="analytics-tag lang-ko">경계 모니터링</span><span class="analytics-tag lang-en">Perimeter Monitoring</span>
+                  <span class="analytics-tag lang-ko">PPE 감지</span><span class="analytics-tag lang-en">PPE Detection</span>
+                  <span class="analytics-tag lang-ko">제한 구역</span><span class="analytics-tag lang-en">Restricted Areas</span>
+                  <span class="analytics-tag lang-ko">연기·화재·무기 감지</span><span class="analytics-tag lang-en">Smoke, Fire, Weapon Detection</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 탭 패널: 출입 통제 -->
+          <div class="analytics-panel" id="tab-access">
+            <div class="analytics-panel__inner">
+              <img class="analytics-panel__img"
+                src="assets/img/vaidio/platform_access.jpg"
+                onerror="this.src='assets/img/animation_community safety.png'"
+                alt="출입 통제 분석" />
+              <div class="analytics-panel__content">
+                <h3>
+                  <span class="lang-ko">출입 통제의 효과성과 정확도 향상</span>
+                  <span class="lang-en">Improve Access Control Effectiveness</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">얼굴·ID·번호판·행동을 지속적으로 검증하여 테일게이팅과 미인가 출입을 차단합니다.</span>
+                  <span class="lang-en">Continuously verify faces, IDs, license plates, and behaviors to deter tailgating and unauthorized entry.</span>
+                </p>
+                <div class="analytics-tags">
+                  <span class="analytics-tag lang-ko">안면 인식</span><span class="analytics-tag lang-en">Face Recognition</span>
+                  <span class="analytics-tag lang-ko">ID 검증</span><span class="analytics-tag lang-en">ID Verification</span>
+                  <span class="analytics-tag lang-ko">번호판 인식 (LPR)</span><span class="analytics-tag lang-en">License Plate Recognition</span>
+                  <span class="analytics-tag lang-ko">방문객 체크인</span><span class="analytics-tag lang-en">Visitor Check-In</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 탭 패널: 포렌식 검색 -->
+          <div class="analytics-panel" id="tab-forensic">
+            <div class="analytics-panel__inner">
+              <img class="analytics-panel__img"
+                src="assets/img/vaidio/platform_forensic.jpg"
+                onerror="this.src='assets/img/animation_public safety.png'"
+                alt="포렌식 검색" />
+              <div class="analytics-panel__content">
+                <h3>
+                  <span class="lang-ko">포렌식 영상 검색의 획기적 가속화</span>
+                  <span class="lang-en">Exponentially Accelerate Forensic Video Search</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">
+                    Vaidio는 쿼리에 2초 이내로 응답하며, 경쟁 AI 솔루션이 몇 시간이 걸리는 수천 시간의 영상을 즉시 검색합니다.
+                  </span>
+                  <span class="lang-en">
+                    Vaidio searches thousands of hours of video in sub-2 seconds—whereas competitive solutions take hours.
+                  </span>
+                </p>
+                <div class="analytics-tags">
+                  <span class="analytics-tag lang-ko">영상 검색</span><span class="analytics-tag lang-en">Video Search</span>
+                  <span class="analytics-tag lang-ko">영상 증거</span><span class="analytics-tag lang-en">Video Evidence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 탭 패널: 운영 분석 -->
+          <div class="analytics-panel" id="tab-operations">
+            <div class="analytics-panel__inner">
+              <img class="analytics-panel__img"
+                src="assets/img/vaidio/platform_operations.jpg"
+                onerror="this.src='assets/img/animation_industry.png'"
+                alt="운영 분석" />
+              <div class="analytics-panel__content">
+                <h3>
+                  <span class="lang-ko">영상을 비즈니스 인텔리전스로 전환</span>
+                  <span class="lang-en">Leverage Video as Business Intelligence</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">의사결정 개선, 고객 경험 향상, 운영 최적화를 위한 구조화된 데이터를 영상에서 추출합니다.</span>
+                  <span class="lang-en">Turn video into structured insight to improve decisions, refine customer experience, and optimize operations.</span>
+                </p>
+                <div class="analytics-tags">
+                  <span class="analytics-tag lang-ko">비즈니스 인텔리전스</span><span class="analytics-tag lang-en">Business Intelligence Data</span>
+                  <span class="analytics-tag lang-ko">카메라 상태 모니터링</span><span class="analytics-tag lang-en">Camera Health</span>
+                  <span class="analytics-tag lang-ko">체류 시간 분석</span><span class="analytics-tag lang-en">Dwell Time</span>
+                  <span class="analytics-tag lang-ko">히트맵</span><span class="analytics-tag lang-en">Heat Map</span>
+                  <span class="analytics-tag lang-ko">소재 검사</span><span class="analytics-tag lang-en">Material Inspection</span>
+                  <span class="analytics-tag lang-ko">프라이버시 보호</span><span class="analytics-tag lang-en">Privacy Protection</span>
+                  <span class="analytics-tag lang-ko">리테일 데이터</span><span class="analytics-tag lang-en">Retail Data</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 탭 패널: 교통 -->
+          <div class="analytics-panel" id="tab-traffic">
+            <div class="analytics-panel__inner">
+              <img class="analytics-panel__img"
+                src="assets/img/vaidio/platform_traffic.jpg"
+                onerror="this.src='assets/img/animation_transport hub.png'"
+                alt="교통 분석" />
+              <div class="analytics-panel__content">
+                <h3>
+                  <span class="lang-ko">카메라 데이터로 신호등 패턴까지 분석</span>
+                  <span class="lang-en">Manage Traffic Light Patterns from Camera Data</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">
+                    Vaidio는 카메라 데이터에서 직접 신호 패턴을 관리·분석할 수 있는 유일한 AI Vision Platform입니다.
+                    교통 흐름 최적화, 도로 안전 강화, 교통 시스템의 실시간 관리를 지원합니다.
+                  </span>
+                  <span class="lang-en">
+                    The only AI Vision Platform capable of managing traffic light patterns from camera data,
+                    optimizing flow, enhancing road safety, and enabling real-time traffic management.
+                  </span>
+                </p>
+                <div class="analytics-tags">
+                  <span class="analytics-tag lang-ko">차량 비즈니스 인텔리전스</span><span class="analytics-tag lang-en">Business Intelligence - Vehicle</span>
+                  <span class="analytics-tag lang-ko">번호판 인식</span><span class="analytics-tag lang-en">LPR - Access Control</span>
+                  <span class="analytics-tag lang-ko">도난 차량 감지</span><span class="analytics-tag lang-en">LPR - Stolen Vehicles</span>
+                  <span class="analytics-tag lang-ko">주차 관리</span><span class="analytics-tag lang-en">Parking Management</span>
+                  <span class="analytics-tag lang-ko">속도 감지</span><span class="analytics-tag lang-en">Speed Detection</span>
+                  <span class="analytics-tag lang-ko">교통 흐름</span><span class="analytics-tag lang-en">Traffic Flow</span>
+                  <span class="analytics-tag lang-ko">차량 역주행</span><span class="analytics-tag lang-en">Vehicle Wrong Direction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 탭 패널: 헬스케어 -->
+          <div class="analytics-panel" id="tab-healthcare">
+            <div class="analytics-panel__inner">
+              <img class="analytics-panel__img"
+                src="assets/img/vaidio/platform_healthcare.jpg"
+                onerror="this.src='assets/img/animation_healthcare.png'"
+                alt="헬스케어 분석" />
+              <div class="analytics-panel__content">
+                <h3>
+                  <span class="lang-ko">의료 환경에 특화된 신속 배포</span>
+                  <span class="lang-en">Fast Deployment for Healthcare Settings</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">모든 환경에서 정확한 건강 모니터링을 신속하게 배포하여 지속적인 감시와 시의적절한 개입을 지원합니다.</span>
+                  <span class="lang-en">Fast deployment of accurate health monitoring in any setting, supporting continuous surveillance and timely intervention.</span>
+                </p>
+                <div class="analytics-tags">
+                  <span class="analytics-tag lang-ko">마스크 착용</span><span class="analytics-tag lang-en">Face Mask</span>
+                  <span class="analytics-tag lang-ko">거리 두기</span><span class="analytics-tag lang-en">Distancing</span>
+                  <span class="analytics-tag lang-ko">점유율</span><span class="analytics-tag lang-en">Occupancy</span>
+                  <span class="analytics-tag lang-ko">체온 감지</span><span class="analytics-tag lang-en">Temperature</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /container -->
+      </section>
+
+      <!-- 커스텀 Vision AI -->
+      <section class="section section--muted">
+        <div class="container">
+          <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap-reverse;">
+            <div style="flex: 0 0 auto; max-width: 380px; width: 100%;">
+              <img
+                src="assets/img/vaidio/platform_custom.jpg"
+                onerror="this.style.display='none'"
+                alt="커스텀 Vision AI"
+                style="width:100%; border-radius:8px;" />
+            </div>
+            <div style="flex: 1 1 260px;">
+              <h2 class="section__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">커스텀 Vision AI 분석</span>
+                <span class="lang-en">Custom Vision AI Analytics</span>
+              </h2>
+              <p class="section__subtitle">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">
+                  Vaidio의 커스텀 분석 기능으로 고객이 관심을 갖는 정확한 이벤트, 객체, 패턴을 AI가 인식하도록 직접 훈련할 수 있습니다.
+                  소매치기 감지, 군중 싸움, 맥주 줄 모니터링, 파손 박스 식별, 연기·구름 감지 등 고유한 사용 사례를 구현한 사례가 있습니다.
+                </span>
+                <span class="lang-en">
+                  Vaidio's custom analytics let customers train AI to spot the exact events, objects, or patterns they care about.
+                  Customers have trained analytics for pick pocketing, crowd fighting, beer lines, damaged box detection, smoke and cloud.
+                </span>
+              </p>
+              <a href="inquiry.html" class="btn btn--primary" style="margin-top: 1rem; display: inline-block;">
+                <span class="lang-ko">커스텀 AI 문의</span>
+                <span class="lang-en">Contact Us About Custom AI</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 모듈형 플랫폼 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">모듈형 플랫폼 — 최신 AI와 함께 지속 진화</span>
+              <span class="lang-en">Modular Platform: Always Evolving with the Latest AI</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">
+                Vaidio의 모듈형 플랫폼은 AI를 모든 레이어에 통합하여 하드웨어나 인프라 교체 없이도
+                최신 혁신 기술을 지속적으로 추가합니다.
+              </span>
+              <span class="lang-en">
+                Vaidio's modular platform integrates AI into every layer, seamlessly adding the latest innovations
+                without requiring hardware or infrastructure upgrades.
+              </span>
+            </p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">에이전틱 AI 플랫폼</span>
+                <span class="lang-en">Agentic AI Platform</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">에이전틱 AI가 Vaidio의 자동 구성·최적화·의사결정을 구동하여 타의 추종을 불허하는 성능을 제공합니다.</span>
+                <span class="lang-en">Agentic AI drives autoconfiguration, optimization, and decision-making across Vaidio for unmatched performance.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">엔터프라이즈급 인프라</span>
+                <span class="lang-en">Enterprise-Grade Infrastructure</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Kubernetes 기반 멀티테넌트, 자동 확장 인프라로 플로팅 분석 라이선스를 지원합니다.</span>
+                <span class="lang-en">Kubernetes-based, multi-tenant, auto-scalable infrastructure with floating analytics licenses.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">유연한 배포 방식</span>
+                <span class="lang-en">Flexible Deployment Options</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">온프레미스, 클라우드, 하이브리드, 엣지 환경 모두에 배포 가능하며 필요에 따라 조합할 수 있습니다.</span>
+                <span class="lang-en">Deploy on-premises, in the cloud, hybrid environments, or at the edge—mix and match as needed.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <span class="lang-ko">기존 VMS 완전 호환</span>
+                <span class="lang-en">Open VMS Integration</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Genetec, Milestone, Avigilon, Axis 등 주요 VMS와 완벽하게 통합되어 기존 인프라를 최대한 활용합니다.</span>
+                <span class="lang-en">Seamlessly integrates with Genetec, Milestone, Avigilon, Axis, and other major VMS platforms.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header" style="text-align: center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI Vision Platform 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Video Infrastructure?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 설계해 드립니다.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to design the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 분야 보기</span>
+                <span class="lang-en">View Industry Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      // 분석 탭 UI
+      document.querySelectorAll('.analytics-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var tabId = this.getAttribute('data-tab');
+          document.querySelectorAll('.analytics-tab').forEach(function(t) { t.classList.remove('active'); });
+          document.querySelectorAll('.analytics-panel').forEach(function(p) { p.classList.remove('active'); });
+          this.classList.add('active');
+          var panel = document.getElementById('tab-' + tabId);
+          if (panel) panel.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

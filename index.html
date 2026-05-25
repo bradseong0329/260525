@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Futec Solutions Inc. | Vaidio AI Vision Platform 국내 총판</title>
+    <meta name="description"
+      content="퓨텍솔루션즈는 Vaidio AI Vision Platform의 국내 공식 총판으로, 기존 카메라를 실행 가능한 인사이트로 전환하는 AI 영상분석 솔루션을 제공합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Hero Slider Styles -->
+    <style>
+      .hero.hero--slider { padding: 0; background: transparent; }
+      .hero-slider {
+        position: relative; width: 100%;
+        height: clamp(520px, 70vh, 820px); overflow: hidden; border-radius: 0; outline: none;
+      }
+      @media (max-width: 1024px) { .hero-slider { height: clamp(480px, 62vh, 740px); } }
+      @media (max-width: 768px)  { .hero-slider { height: clamp(560px, 100svh, 820px); } }
+      .hero-slider__slides { position: relative; width: 100%; height: 100%; margin: 0; padding: 0; }
+      .hero-slider__slide {
+        position: absolute; inset: 0; opacity: 0;
+        transition: opacity 600ms ease; pointer-events: none;
+      }
+      .hero-slider__slide.is-active { opacity: 1; pointer-events: auto; }
+      .hero-slider picture, .hero-slider img { display: block; width: 100%; height: 100%; }
+      .hero-slider img { object-fit: cover; object-position: center; }
+      .hero-slider__overlay {
+        position: absolute; inset: 0;
+        display: grid; grid-template-rows: auto 1fr;
+        padding: clamp(18px, 3.2vw, 44px);
+        background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.05) 100%);
+        color: #fff;
+      }
+      @media (max-width: 768px) {
+        .hero-slider__overlay {
+          background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.10) 100%);
+        }
+      }
+      .hero-slider__title {
+        justify-self: start; align-self: start; font-weight: 700; letter-spacing: .02em;
+        font-size: clamp(.95rem, 1.35vw, 1.15rem); padding: 10px 12px;
+        border: 1px solid rgba(255,255,255,.35); background: rgba(0,0,0,.25);
+        border-radius: 12px; backdrop-filter: blur(6px);
+      }
+      .hero-slider__content { align-self: center; max-width: 860px; }
+      .hero-slider__headline {
+        margin: 0; font-weight: 800; line-height: 1.15;
+        font-size: clamp(1.6rem, 3.2vw, 3rem); text-shadow: 0 10px 22px rgba(0,0,0,.35);
+      }
+      .hero-slider__subheadline {
+        margin: 14px 0 0; font-weight: 600; line-height: 1.4;
+        font-size: clamp(1rem, 1.6vw, 1.35rem); opacity: .95; text-shadow: 0 10px 22px rgba(0,0,0,.35);
+      }
+      .hero-slider__text {
+        margin: 14px 0 0; line-height: 1.6;
+        font-size: clamp(.92rem, 1.15vw, 1.05rem); opacity: .9;
+        max-width: 720px; text-shadow: 0 10px 22px rgba(0,0,0,.35);
+      }
+      @media (max-width: 768px) {
+        .hero-slider__text {
+          display: -webkit-box; -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical; overflow: hidden;
+        }
+      }
+      .hero-slider__actions { margin-top: 20px; display: flex; justify-content: center; }
+      .hero-slider__actions .hero__actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+      .hero-slider__nav {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        width: 46px; height: 46px; border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.35); background: rgba(0,0,0,.35);
+        color: #fff; display: grid; place-items: center; cursor: pointer; z-index: 5;
+        transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+      }
+      .hero-slider__nav:hover, .hero-slider__nav:focus-visible {
+        background: rgba(0,0,0,.55); border-color: rgba(255,255,255,.55); outline: none;
+      }
+      .hero-slider__nav--prev { left: 16px; }
+      .hero-slider__nav--next { right: 16px; }
+      @media (max-width: 768px) {
+        .hero-slider__nav { width: 42px; height: 42px; }
+        .hero-slider__nav--prev { left: 10px; }
+        .hero-slider__nav--next { right: 10px; }
+      }
+      .hero-slider__nav span { font-size: 28px; line-height: 1; }
+      .hero-slider__dots {
+        position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+        display: flex; gap: 10px; align-items: center; justify-content: center; z-index: 5;
+      }
+      .hero-slider__dot {
+        width: 10px; height: 10px; border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.6); background: rgba(255,255,255,.25);
+        cursor: pointer; padding: 0; transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+      }
+      .hero-slider__dot:hover, .hero-slider__dot:focus-visible {
+        transform: scale(1.15); outline: none;
+        border-color: rgba(255,255,255,.85); background: rgba(255,255,255,.45);
+      }
+      .hero-slider__dot.is-active { background: rgba(255,255,255,.95); border-color: rgba(255,255,255,.95); }
+
+      /* ── Value Cards ── */
+      .value-card {
+        display: flex; gap: 1.5rem; align-items: flex-start;
+        padding: 1.5rem; border-radius: 10px;
+        background: #fff; border: 1px solid #e5e7eb;
+        transition: box-shadow .2s, transform .2s;
+      }
+      .value-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.10); transform: translateY(-2px); }
+      .value-card__icon {
+        flex: 0 0 56px; height: 56px; border-radius: 12px;
+        background: #eef2ff; display: grid; place-items: center;
+        font-size: 1.6rem;
+      }
+      .value-card__body h3 { margin: 0 0 .5rem; font-size: 1.05rem; font-weight: 700; }
+      .value-card__body p { margin: 0; font-size: .9rem; color: #555; line-height: 1.6; }
+
+      /* ── Stats 배너 ── */
+      .home-stats { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+      .home-stat { text-align: center; min-width: 140px; }
+      .home-stat__num { font-size: 2.8rem; font-weight: 800; color: var(--color-primary, #1a56db); }
+      .home-stat__label { font-size: .9rem; color: #555; margin-top: .25rem; }
+
+      /* ── 솔루션 그리드 (홈 미리보기) ── */
+      .sol-preview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+      .sol-preview-item {
+        border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden;
+        transition: box-shadow .2s, transform .2s;
+      }
+      .sol-preview-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,.10); transform: translateY(-3px); }
+      .sol-preview-item a { display: block; text-decoration: none; color: inherit; }
+      .sol-preview-item img {
+        width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block;
+      }
+      .sol-preview-item__label {
+        padding: .75rem 1rem; font-weight: 600; font-size: .92rem;
+        display: flex; justify-content: space-between; align-items: center;
+      }
+      .sol-preview-item__arrow { color: var(--color-primary, #1a56db); font-size: 1.1rem; }
+
+      @media (max-width: 600px) {
+        .home-stat__num { font-size: 2rem; }
+        .home-stats { gap: 1rem; }
+        .value-card { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- ── Hero Slider (기존 슬라이드 유지) ── -->
+      <section class="hero hero--slider">
+        <div class="hero-slider" role="region" aria-roledescription="carousel" aria-label="Hero slider" tabindex="0">
+          <ul class="hero-slider__slides" role="list">
+
+            <!-- Slide 1 -->
+            <li class="hero-slider__slide is-active" data-index="0" aria-hidden="false">
+              <picture>
+                <source media="(max-width: 768px) and (orientation: portrait)" srcset="assets/img/slide1_mobile.webp" />
+                <source media="(max-width: 1024px)" srcset="assets/img/slide1_tablet.webp" />
+                <img src="assets/img/slide1_web.webp" alt="AI Vision Platform Hero" loading="eager" decoding="async" />
+              </picture>
+              <div class="hero-slider__overlay">
+                <div class="hero-slider__title">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">Vaidio AI Vision Platform</span>
+                  <span class="lang-en">Vaidio AI Vision Platform</span>
+                </div>
+                <div class="hero-slider__content">
+                  <h1 class="hero-slider__headline">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">카메라의 숨겨진 잠재력을 끌어내는 솔루션</span>
+                    <span class="lang-en">Unlock the Power of Your Cameras</span>
+                  </h1>
+                  <p class="hero-slider__subheadline">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">AI 가속화. 영상 인텔리전스 혁신.</span>
+                    <span class="lang-en">Accelerate AI. Unlock Visual Transformation.</span>
+                  </p>
+                  <p class="hero-slider__text">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">
+                      Vaidio는 카메라 영상을 실행 가능한 데이터로 전환합니다. 기업이 얼마나 안전하고, 보안적으로 견고하며,
+                      효율적으로 운영되는지를 통합 플랫폼으로 관리하세요. 퓨텍솔루션즈가 국내 공식 총판으로서 지원합니다.
+                    </span>
+                    <span class="lang-en">
+                      Vaidio turns camera feeds into actionable data—helping you manage how safely, securely, and
+                      effectively your enterprise operates. Futec Solutions, as the official Korean distributor,
+                      delivers Vaidio's award-winning AI Vision capabilities to the Korean market.
+                    </span>
+                  </p>
+                  <div class="hero-slider__actions">
+                    <div class="hero__actions">
+                      <a href="platform.html" class="btn-primary">
+                        <span class="lang-ko">플랫폼 알아보기</span>
+                        <span class="lang-en">Explore the Platform</span>
+                      </a>
+                      <a href="inquiry.html" class="btn-secondary">
+                        <span class="lang-ko">도입 문의</span>
+                        <span class="lang-en">Request a Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Slide 2 -->
+            <li class="hero-slider__slide" data-index="1" aria-hidden="true">
+              <picture>
+                <source media="(max-width: 768px) and (orientation: portrait)" srcset="assets/img/slide2_mobile.webp" />
+                <source media="(max-width: 1024px)" srcset="assets/img/slide2_tablet.webp" />
+                <img src="assets/img/slide2_web.webp" alt="Manufacturing Safety AI" loading="lazy" decoding="async" />
+              </picture>
+              <div class="hero-slider__overlay">
+                <div class="hero-slider__title">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">제조 / 물류 안전</span>
+                  <span class="lang-en">Manufacturing &amp; Logistics Safety</span>
+                </div>
+                <div class="hero-slider__content">
+                  <h2 class="hero-slider__headline">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">데이터로 증명하는 안전, 운영 인텔리전스를 극대화하다</span>
+                    <span class="lang-en">Data-Proven Safety. Maximized Operational Intelligence.</span>
+                  </h2>
+                  <p class="hero-slider__subheadline">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">PPE 컴플라이언스, 품질 검사, 재고 추적을 AI로 자동화</span>
+                    <span class="lang-en">Automate PPE compliance, quality inspection, and inventory tracking with AI.</span>
+                  </p>
+                  <p class="hero-slider__text">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">
+                      기존 카메라에 AI를 오버레이하여 안전 위협, 품질 이슈, 공정 중단, 재고 손실을 실시간으로 감지합니다.
+                      카메라 교체 없이 즉시 도입 가능하며, 빠른 ROI를 실현합니다.
+                    </span>
+                    <span class="lang-en">
+                      Overlay AI on your existing cameras to detect safety risks, quality issues, process disruptions,
+                      and inventory losses in real time. No camera replacement needed—fast ROI.
+                    </span>
+                  </p>
+                  <div class="hero-slider__actions">
+                    <div class="hero__actions">
+                      <a href="solution-manufacturing.html" class="btn-primary">
+                        <span class="lang-ko">제조 솔루션 보기</span>
+                        <span class="lang-en">View Manufacturing Solution</span>
+                      </a>
+                      <a href="solutions.html" class="btn-secondary">
+                        <span class="lang-ko">전체 솔루션</span>
+                        <span class="lang-en">All Solutions</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Slide 3 -->
+            <li class="hero-slider__slide" data-index="2" aria-hidden="true">
+              <picture>
+                <source media="(max-width: 768px) and (orientation: portrait)" srcset="assets/img/slide3_mobile.webp" />
+                <source media="(max-width: 1024px)" srcset="assets/img/slide3_tablet.webp" />
+                <img src="assets/img/slide3_web.webp" alt="Retail AI Analytics" loading="lazy" decoding="async" />
+              </picture>
+              <div class="hero-slider__overlay">
+                <div class="hero-slider__title">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">리테일 (매장)</span>
+                  <span class="lang-en">Retail</span>
+                </div>
+                <div class="hero-slider__content">
+                  <h2 class="hero-slider__headline">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">모든 카메라를 스마트 자산으로 — 손실 예방부터 고객 경험까지</span>
+                    <span class="lang-en">Make Every Camera a Smart Asset — From Loss Prevention to Customer Experience.</span>
+                  </h2>
+                  <p class="hero-slider__subheadline">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">절도 감지, 대기열 관리, 매장 운영 최적화를 하나의 플랫폼으로</span>
+                    <span class="lang-en">Theft detection, queue management, and store ops optimization on one platform.</span>
+                  </p>
+                  <p class="hero-slider__text">
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">
+                      기존 카메라 인프라를 그대로 활용하여 실시간 손실 예방, 고객 흐름 분석, 운영 인텔리전스를 실현합니다.
+                      안전·서비스·수익성을 동시에 향상시키는 Vaidio AI Vision Platform을 경험해 보세요.
+                    </span>
+                    <span class="lang-en">
+                      Use your existing camera infrastructure to achieve real-time loss prevention, customer flow analytics,
+                      and operational intelligence. Experience the Vaidio AI Vision Platform that improves safety, service, and profitability.
+                    </span>
+                  </p>
+                  <div class="hero-slider__actions">
+                    <div class="hero__actions">
+                      <a href="solution-retail.html" class="btn-primary">
+                        <span class="lang-ko">리테일 솔루션 보기</span>
+                        <span class="lang-en">View Retail Solution</span>
+                      </a>
+                      <a href="inquiry.html" class="btn-secondary">
+                        <span class="lang-ko">도입 문의</span>
+                        <span class="lang-en">Request a Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <button class="hero-slider__nav hero-slider__nav--prev" type="button" aria-label="Previous slide">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="hero-slider__nav hero-slider__nav--next" type="button" aria-label="Next slide">
+            <span aria-hidden="true">›</span>
+          </button>
+          <div class="hero-slider__dots" role="tablist" aria-label="Slide navigation">
+            <button class="hero-slider__dot is-active" type="button" role="tab" aria-label="Slide 1" aria-selected="true"  tabindex="0"  data-index="0"></button>
+            <button class="hero-slider__dot"            type="button" role="tab" aria-label="Slide 2" aria-selected="false" tabindex="-1" data-index="1"></button>
+            <button class="hero-slider__dot"            type="button" role="tab" aria-label="Slide 3" aria-selected="false" tabindex="-1" data-index="2"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 1. 4대 가치 제안 (Vaidio 홈 "Transform Every Corner" 섹션 대응) ── -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">귀사 전 사업 영역을 혁신합니다</span>
+              <span class="lang-en">Transform Every Corner of Your Enterprise</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">AI 기반 영상 인텔리전스가 비즈니스 핵심 기능 전반에서 성과를 이끕니다.</span>
+              <span class="lang-en">See how AI-powered video intelligence drives results across critical business functions.</span>
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="value-card">
+              <div class="value-card__icon">🏛️</div>
+              <div class="value-card__body">
+                <h3>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">기존 보안 인프라 업그레이드</span>
+                  <span class="lang-en">Legacy Security Infrastructure</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">
+                    기존 카메라를 AI 기반 시스템으로 전환합니다. 카메라 교체 없이 실시간 알림, 신속 검색,
+                    스마트 모니터링으로 안전성과 대응 속도를 높입니다.
+                  </span>
+                  <span class="lang-en">
+                    Turn existing cameras into AI-powered systems—no replacement needed. Get real-time alerts,
+                    rapid search, and smart monitoring that boost safety and response without costly upgrades.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="value-card__icon">⚙️</div>
+              <div class="value-card__body">
+                <h3>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">운영 효율 극대화</span>
+                  <span class="lang-en">Operational Effectiveness</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">
+                    영상 피드에서 실시간 운영 인사이트를 추출합니다. 모니터링을 자동화하고
+                    지연을 줄이며 AI 분석으로 의사결정 품질을 향상시킵니다.
+                  </span>
+                  <span class="lang-en">
+                    Unlock real-time operational insights from video feeds. Automate monitoring, reduce delays,
+                    and improve decision-making with AI-powered analytics across teams.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="value-card__icon">🛡️</div>
+              <div class="value-card__body">
+                <h3>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">시설 보안 및 안전</span>
+                  <span class="lang-en">Facilities Security &amp; Safety</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">
+                    위협 발생 즉시 AI가 감지합니다. 실시간 알림과 즉각 검색으로 보안팀이 더 빠르게 대응하고
+                    사고를 예방하며 결과를 개선합니다.
+                  </span>
+                  <span class="lang-en">
+                    Protect people and assets with AI that spots threats as they happen. Real-time alerts and
+                    instant search help security teams respond faster and prevent incidents.
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <div class="value-card__icon">📋</div>
+              <div class="value-card__body">
+                <h3>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">컴플라이언스 &amp; 리스크 관리</span>
+                  <span class="lang-en">Compliance &amp; Risk Management</span>
+                </h3>
+                <p>
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">
+                    AI로 영상을 검증 가능한 컴플라이언스 증거로 전환합니다. PPE 준수 여부를 자동 추적하고
+                    규제 요건을 충족하며 책임 리스크를 줄입니다.
+                  </span>
+                  <span class="lang-en">
+                    Turn video into verifiable compliance using AI-powered analytics. Automatically track
+                    PPE adherence, meet regulatory requirements, and reduce liability risk.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 2. 플랫폼 핵심 수치 ── -->
+      <section class="section section--muted" style="padding: 2.5rem 0;">
+        <div class="container">
+          <div class="home-stats">
+            <div class="home-stat">
+              <div class="home-stat__num">30+</div>
+              <div class="home-stat__label">
+                <span class="lang-ko">AI 분석 엔진</span>
+                <span class="lang-en">AI Analytics Engines</span>
+              </div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat__num">Sub-2초</div>
+              <div class="home-stat__label">
+                <span class="lang-ko">포렌식 영상 검색</span>
+                <span class="lang-en">Forensic Video Search</span>
+              </div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat__num">1,000x</div>
+              <div class="home-stat__label">
+                <span class="lang-ko">수동 검토 대비 빠른 조사</span>
+                <span class="lang-en">Faster Than Manual Review</span>
+              </div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat__num">9개</div>
+              <div class="home-stat__label">
+                <span class="lang-ko">핵심 산업 솔루션</span>
+                <span class="lang-en">Industry Solutions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 3. 솔루션 미리보기 그리드 ── -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">산업별 솔루션</span>
+              <span class="lang-en">Solutions by Industry</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI Vision Platform이 적용되는 9개 핵심 산업 분야를 확인하세요.</span>
+              <span class="lang-en">Explore 9 key industries where the Vaidio AI Vision Platform drives results.</span>
+            </p>
+          </div>
+
+          <div class="sol-preview-grid">
+
+            <div class="sol-preview-item">
+              <a href="solution-airports.html">
+                <img src="assets/img/animation_transport hub.png" alt="공항 / 운송 허브" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">공항 / 운송 허브</span>
+                    <span class="lang-en">Airports &amp; Transport</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-casinos.html">
+                <img src="assets/img/animation_entertainment.png" alt="카지노 / 게이밍" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">카지노 / 게이밍</span>
+                    <span class="lang-en">Casinos &amp; Gaming</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-smartcities.html">
+                <img src="assets/img/animation_smart city.png" alt="스마트 시티" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">스마트 시티</span>
+                    <span class="lang-en">Smart Cities</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-education.html">
+                <img src="assets/img/animation_Education Campus.png" alt="교육 캠퍼스" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">교육 캠퍼스</span>
+                    <span class="lang-en">Education Campus</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-healthcare.html">
+                <img src="assets/img/animation_healthcare.png" alt="헬스케어 / 병원" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">헬스케어 / 병원</span>
+                    <span class="lang-en">Healthcare &amp; Hospitals</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-hospitality.html">
+                <img src="assets/img/animation_hospitality Hotel.png" alt="호스피탈리티 / 호텔" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">호스피탈리티 / 호텔</span>
+                    <span class="lang-en">Hospitality &amp; Hotels</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-manufacturing.html">
+                <img src="assets/img/animation_manufacturing.png" alt="제조 / 물류" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">제조 / 물류</span>
+                    <span class="lang-en">Manufacturing &amp; Logistics</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-retail.html">
+                <img src="assets/img/animation_retail.png" alt="리테일 (매장)" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">리테일 (매장)</span>
+                    <span class="lang-en">Retail</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="sol-preview-item">
+              <a href="solution-stadiums.html">
+                <img src="assets/img/animation_community safety.png" alt="경기장 / 대형 시설" />
+                <div class="sol-preview-item__label">
+                  <span>
+                    <span class="lang-ko">경기장 / 대형 시설</span>
+                    <span class="lang-en">Stadiums &amp; Large Venues</span>
+                  </span>
+                  <span class="sol-preview-item__arrow">→</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="solutions.html" class="btn btn--primary">
+              <span class="lang-ko">전체 솔루션 보기</span>
+              <span class="lang-en">View All Solutions</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 4. 왜 Vaidio인가 (핵심 차별점) ── -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI Vision Platform을 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio AI Vision Platform</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            <article class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">🔔 즉각적 알림</span>
+                <span class="lang-en">🔔 Immediate Alerts</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">중요 이벤트를 즉시 통보하여 더 빠른 대응, 안전 강화, 위험 감소를 실현합니다.</span>
+                <span class="lang-en">Instantly get notified of critical events so you can respond faster, enhance safety, and reduce risks.</span>
+              </p>
+            </article>
+            <article class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">🔍 실시간 포렌식 검색</span>
+                <span class="lang-en">🔍 Real-Time Forensic Search</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">수동 검토 대비 1,000배 빠른 조사 속도와 정확도를 제공합니다.</span>
+                <span class="lang-en">Dramatically boost investigation speed and accuracy—1,000x faster than manual review.</span>
+              </p>
+            </article>
+            <article class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">🤖 카메라 교체 없이 AI 도입</span>
+                <span class="lang-en">🤖 AI Without Camera Replacement</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">기존 IP 카메라 및 주요 VMS(Genetec, Milestone, Avigilon 등)와 완벽 호환됩니다.</span>
+                <span class="lang-en">Fully compatible with existing IP cameras and major VMS platforms—Genetec, Milestone, Avigilon, and more.</span>
+              </p>
+            </article>
+            <article class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">☁️ 유연한 배포 방식</span>
+                <span class="lang-en">☁️ Flexible Deployment</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">온프레미스, 클라우드, 하이브리드, 엣지 환경 모두에서 Kubernetes 기반으로 안정적으로 운영됩니다.</span>
+                <span class="lang-en">Stable Kubernetes-based operation across on-premises, cloud, hybrid, and edge environments.</span>
+              </p>
+            </article>
+          </div>
+
+          <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="platform.html" class="btn btn--primary">
+              <span class="lang-ko">플랫폼 전체 기능 보기</span>
+              <span class="lang-en">Explore Full Platform Capabilities</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 5. 글로벌 시장 인사이트 (기존 유지) ── -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <span class="lang-ko">글로벌 시장 인사이트</span>
+              <span class="lang-en">Global Market Insights</span>
+            </h2>
+            <p class="section__subtitle">
+              <span class="lang-ko">영상감시 · VMS · AI 영상분석 시장 전망</span>
+              <span class="lang-en">Video Surveillance · VMS · AI Video Analytics Outlook</span>
+            </p>
+          </div>
+          <div>
+            <div style="margin-bottom: 24px;">
+              <h3 class="card__title">
+                <span class="lang-ko">글로벌 영상감시 시장 ('24→'30)</span>
+                <span class="lang-en">Global Video Surveillance ('24→'30)</span>
+              </h3>
+              <p class="card__text">
+                <span class="lang-ko">$73.8B → $147.7B · 12.3% CAGR<br>(원화) 약 110.7조원 → 221.6조원 (환산 기준: 1,500원/USD)</span>
+                <span class="lang-en">$73.8B → $147.7B · 12.3% CAGR<br>(KRW) approx. 110.7T → 221.6T (FX: 1,500 KRW/USD)</span>
+              </p>
+              <p class="card__text" style="font-size:.8rem;opacity:.8;margin-top:4px;">
+                <span class="lang-ko">출처: Grand View Research, MarketsandMarkets</span>
+                <span class="lang-en">Source: Grand View Research, MarketsandMarkets</span>
+              </p>
+            </div>
+            <div style="margin-bottom: 24px;">
+              <h3 class="card__title">
+                <span class="lang-ko">글로벌 VMS 시장 ('24→'33)</span>
+                <span class="lang-en">Global VMS Market ('24→'33)</span>
+              </h3>
+              <p class="card__text">
+                <span class="lang-ko">$11.7B → $40.9B · 14.3% CAGR<br>(원화) 약 17.5조원 → 61.4조원 (환산 기준: 1,500원/USD)</span>
+                <span class="lang-en">$11.7B → $40.9B · 14.3% CAGR<br>(KRW) approx. 17.5T → 61.4T (FX: 1,500 KRW/USD)</span>
+              </p>
+              <p class="card__text" style="font-size:.8rem;opacity:.8;margin-top:4px;">
+                <span class="lang-ko">출처: Grand View Research</span>
+                <span class="lang-en">Source: Grand View Research</span>
+              </p>
+            </div>
+            <div>
+              <h3 class="card__title">
+                <span class="lang-ko">글로벌 AI 영상분석 시장 ('24→'34)</span>
+                <span class="lang-en">Global AI Video Analytics ('24→'34)</span>
+              </h3>
+              <p class="card__text">
+                <span class="lang-ko">$7.8B → $42.2B · 18.3% CAGR<br>(원화) 약 11.7조원 → 63.3조원 (환산 기준: 1,500원/USD)</span>
+                <span class="lang-en">$7.8B → $42.2B · 18.3% CAGR</span>
+              </p>
+              <p class="card__text" style="font-size:.8rem;opacity:.8;margin-top:4px;">
+                <span class="lang-ko">출처: Allied Market Research, Fortune Business Insights</span>
+                <span class="lang-en">Source: Allied Market Research, Fortune Business Insights</span>
+              </p>
+            </div>
+          </div>
+          <p class="section__subtitle" style="margin-top:24px;">
+            <span class="lang-ko">글로벌 영상감시, VMS, AI 영상분석 소프트웨어 시장은 모두 두 자릿수에 가까운 연평균 성장률(CAGR)을 보이며 빠르게 확대될 것으로 전망됩니다.</span>
+            <span class="lang-en">Global video surveillance, VMS, and AI video analytics markets are all expected to see strong double-digit CAGR growth.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ── 6. CTA 배너 ── -->
+      <section class="section section--muted">
+        <div class="container">
+          <div style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">귀사의 카메라를 AI로 깨워보세요</span>
+              <span class="lang-en">Ready to Unlock the Power of Your Cameras?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈는 Vaidio AI Vision Platform의 국내 공식 총판으로서 도입 상담, 기술 지원, 파트너 프로그램을 제공합니다.</span>
+              <span class="lang-en">As the official Korean distributor of Vaidio AI Vision Platform, Futec Solutions provides consultation, technical support, and partner programs.</span>
+            </p>
+            <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="contact.html" class="btn btn--secondary">
+                <span class="lang-ko">연락처 보기</span>
+                <span class="lang-en">Contact Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Hero Slider JS (기존 동일) -->
+    <script>
+      (function() {
+        var slider = document.querySelector(".hero-slider");
+        if (!slider) return;
+        var slides = Array.prototype.slice.call(slider.querySelectorAll(".hero-slider__slide"));
+        var dots   = Array.prototype.slice.call(slider.querySelectorAll(".hero-slider__dot"));
+        var prevBtn = slider.querySelector(".hero-slider__nav--prev");
+        var nextBtn = slider.querySelector(".hero-slider__nav--next");
+        var current = 0, intervalMs = 5000, timer = null;
+        function setActive(index, fromUser) {
+          if (index < 0) index = slides.length - 1;
+          if (index >= slides.length) index = 0;
+          slides.forEach(function(s, i) {
+            var a = i === index;
+            s.classList.toggle("is-active", a);
+            s.setAttribute("aria-hidden", a ? "false" : "true");
+          });
+          dots.forEach(function(d, i) {
+            var a = i === index;
+            d.classList.toggle("is-active", a);
+            d.setAttribute("aria-selected", a ? "true" : "false");
+            d.setAttribute("tabindex", a ? "0" : "-1");
+          });
+          if (fromUser) dots[index].focus({ preventScroll: true });
+          current = index;
+        }
+        function start() {
+          stop();
+          timer = window.setInterval(function() { setActive(current + 1, false); }, intervalMs);
+        }
+        function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+        prevBtn.addEventListener("click", function() { setActive(current - 1, true); start(); });
+        nextBtn.addEventListener("click", function() { setActive(current + 1, true); start(); });
+        dots.forEach(function(dot) {
+          dot.addEventListener("click", function() {
+            var idx = parseInt(dot.getAttribute("data-index"), 10);
+            if (!isNaN(idx)) { setActive(idx, true); start(); }
+          });
+        });
+        slider.addEventListener("mouseenter", stop);
+        slider.addEventListener("mouseleave", start);
+        slider.addEventListener("focusin", stop);
+        slider.addEventListener("focusout", function(e) { if (!slider.contains(e.relatedTarget)) start(); });
+        slider.addEventListener("keydown", function(e) {
+          var k = e.key || e.keyCode;
+          if (k === "ArrowLeft" || k === 37) { e.preventDefault(); setActive(current - 1, true); start(); }
+          else if (k === "ArrowRight" || k === 39) { e.preventDefault(); setActive(current + 1, true); start(); }
+        });
+        setActive(0, false); start();
+      })();
+    </script>
+  </body>
+</html>

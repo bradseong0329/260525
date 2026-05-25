@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>제조 / 물류 | Futec Solutions Inc.</title>
+    <meta name="description" content="Vaidio AI 영상분석으로 안전 위협, 품질 이슈, 공정 중단, 재고 손실을 실시간으로 감지합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .solution-hero__image {
+        width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      .solution-stats {
+        display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        justify-content: center;
+      }
+      .solution-stat {
+        text-align: center; min-width: 120px;
+      }
+      .solution-stat__number {
+        font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db);
+      }
+      .solution-stat__label {
+        font-size: 0.9rem; color: #555; margin-top: 0.25rem;
+      }
+      .card__category {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+        color: var(--color-primary, #1a56db); letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card__challenge, .card__solution {
+        margin-bottom: 0.75rem;
+      }
+      @media (max-width: 600px) {
+        .solution-stats { gap: 1rem; }
+        .solution-stat__number { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">카메라를 비즈니스 인텔리전스로 전환합니다</span>
+              <span class="lang-en">Turn Cameras Into Business Intelligence</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio는 기존 카메라에 AI를 오버레이하여 안전 위협, 품질 이슈, 공정 중단, 재고 손실을 실시간으로 감지하고 대응합니다.</span>
+              <span class="lang-en">Vaidio overlays AI on your existing cameras to detect and alert on safety risks, quality issues, disruptions, and inventory losses—in real time.</span>
+            </p>
+            <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 목록</span>
+                <span class="lang-en">All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top:0;">
+          <img
+            class="solution-hero__image"
+            src="assets/img/vaidio/hero_manufacturing.png"
+            onerror="this.src='assets/img/animation_manufacturing.png'"
+            alt="제조 / 물류" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="solutions.html"><span class="lang-ko">솔루션</span><span class="lang-en">Solutions</span></a></li>
+            <li>
+              <span class="lang-ko">제조 / 물류</span>
+              <span class="lang-en">Manufacturing & Logistics</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 주요 지표 -->
+      <section class="section section--light" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="solution-stats">
+            
+            <div class="solution-stat">
+              <div class="solution-stat__number">30+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">AI 분석 모델</span>
+                <span class="lang-en">AI Analytics Models</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">10년+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">훈련 데이터</span>
+                <span class="lang-en">Years of Training Data</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">실시간</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">안전·품질 감시</span>
+                <span class="lang-en">Safety & Quality Monitoring</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">즉시</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">ROI 실현</span>
+                <span class="lang-en">ROI Delivered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 핵심 기능 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">핵심 기능 및 효과</span>
+              <span class="lang-en">Key Features &amp; Benefits</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">가동 중단 최소화</span>
+                <span class="lang-en">Minimize Downtime</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">라인 정지, 유휴 장비, 공정 이상을 즉시 감지하여 다운타임을 최소화합니다.</span>
+                <span class="lang-en">Instantly detect line stoppages, idle equipment, and process anomalies to minimize downtime.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">작업자 안전·컴플라이언스</span>
+                <span class="lang-en">Worker Safety & Compliance</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">PPE 착용 여부, 낙상, 지게차 근처 위험 행동 등을 모니터링합니다.</span>
+                <span class="lang-en">Monitor for PPE usage, falls, and hazardous behavior near forklifts or machinery.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">품질·생산성 향상</span>
+                <span class="lang-en">Improve Quality & Output</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">오염물질, 잘못 적재된 트레일러, 제품 결함을 비용 문제가 되기 전에 감지합니다.</span>
+                <span class="lang-en">Detect contaminants, improperly loaded trailers, and product defects before they become costly problems.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">자산·재고 보호</span>
+                <span class="lang-en">Protect Assets & Inventory</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">고가 제품 이동을 추적하고 절도를 방지하며 야드 물류를 개선합니다.</span>
+                <span class="lang-en">Track the movement of high-value goods, prevent theft, and improve yard logistics.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">교체 없이 확장</span>
+                <span class="lang-en">Scale Without Rip-and-Replace</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">기존 카메라 및 영상 시스템에서 바로 작동합니다.</span>
+                <span class="lang-en">Works with your existing cameras and video systems with no replacement required.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 과제 및 솔루션 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">주요 과제와 Vaidio 솔루션</span>
+              <span class="lang-en">Key Challenges &amp; Vaidio Solutions</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">PPE 컴플라이언스</span>
+                <span class="lang-en">PPE Compliance</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">위험 작업 구역에서 PPE 착용 여부를 지속적으로 확인하기 어렵습니다.</span>
+                  <span class="lang-en">Continuously verifying PPE usage in hazardous work zones is challenging.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">PPE 컴플라이언스 모니터링으로 실시간 알림을 전송하고 OSHA 준수를 지원합니다.</span>
+                  <span class="lang-en">PPE compliance monitoring sends real-time alerts and supports OSHA compliance.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">제품 결함 감지</span>
+                <span class="lang-en">Product Defect Detection</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">반복 가능한 결함 감지 테스트 없이 불량품이 출하될 수 있습니다.</span>
+                  <span class="lang-en">Without repeatable defect detection, defective products may reach shipment.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">자동 결함 감지로 높은 반복성과 감사 추적을 제공하여 불량률을 줄입니다.</span>
+                  <span class="lang-en">Automated defect detection provides high repeatability and audit trails to reduce reject rates.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">재고 손실 및 야드 비효율</span>
+                <span class="lang-en">Inventory Loss & Yard Inefficiency</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">재고 분실, 수작업 로깅, 적재 손상으로 비용이 발생합니다.</span>
+                  <span class="lang-en">Lost inventory, manual logging, and loading damage cause significant costs.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">크로스카메라 추적·번호판 인식·적재 컴플라이언스 검증으로 야드 물류를 자동화합니다.</span>
+                  <span class="lang-en">Cross-camera tracking, LPR, and load compliance verification automate yard logistics.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vaidio 선택 이유 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio를 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">가장 정확한 AI</span>
+                <span class="lang-en">Most Accurate AI</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">10년 이상 3,000여 개 객체로 훈련된 30+ AI 모델로 높은 감지 정확도를 보장합니다.</span>
+                <span class="lang-en">30+ AI models trained over 10+ years on 3,000+ objects for high detection accuracy.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">모든 카메라·VMS 호환</span>
+                <span class="lang-en">Any Camera, Any VMS</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Milestone, Genetec, Axis 등과 호환되며 기존 시스템을 교체할 필요가 없습니다.</span>
+                <span class="lang-en">No rip-and-replace; works with Milestone, Genetec, Axis, and more.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">엣지~클라우드 유연성</span>
+                <span class="lang-en">Edge to Cloud Flexibility</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">IoT 엣지, 온프레미스, 클라우드, 하이브리드 배포를 모두 지원합니다.</span>
+                <span class="lang-en">IoT edge, on-premises, cloud, or hybrid deployments—all supported.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">엔터프라이즈 준비 완료</span>
+                <span class="lang-en">Enterprise Ready</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Kubernetes 기반 아키텍처로 플로팅 라이선스, 워크로드 최적화, 멀티테넌트 서비스 포털을 제공합니다.</span>
+                <span class="lang-en">Kubernetes-enabled architecture with floating licenses, workload optimization, and multi-tenant service portal.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header" style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">제조 / 물류 AI 영상분석 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Manufacturing & Logistics Operations?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 검토해 보세요.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to explore the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">다른 솔루션 보기</span>
+                <span class="lang-en">View All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

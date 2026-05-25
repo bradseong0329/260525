@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>호스피탈리티 / 호텔 | Futec Solutions Inc.</title>
+    <meta name="description" content="Vaidio AI 영상분석으로 안전을 강화하고 운영을 개선하며 게스트 경험을 향상시킵니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .solution-hero__image {
+        width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      .solution-stats {
+        display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        justify-content: center;
+      }
+      .solution-stat {
+        text-align: center; min-width: 120px;
+      }
+      .solution-stat__number {
+        font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db);
+      }
+      .solution-stat__label {
+        font-size: 0.9rem; color: #555; margin-top: 0.25rem;
+      }
+      .card__category {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+        color: var(--color-primary, #1a56db); letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card__challenge, .card__solution {
+        margin-bottom: 0.75rem;
+      }
+      @media (max-width: 600px) {
+        .solution-stats { gap: 1rem; }
+        .solution-stat__number { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vision AI로 호스피탈리티 서비스를 혁신합니다</span>
+              <span class="lang-en">Hospitality Intelligence with Vision AI</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio AI Vision Platform은 카메라 영상을 실시간 인사이트로 전환하여 호스피탈리티 환경 전반에서 안전 강화, 운영 개선, 게스트 경험 향상을 동시에 실현합니다.</span>
+              <span class="lang-en">Vaidio's AI Vision Platform converts camera feeds into real-time insights—enhancing safety, improving operations, and elevating the guest experience across hospitality environments.</span>
+            </p>
+            <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 목록</span>
+                <span class="lang-en">All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top:0;">
+          <img
+            class="solution-hero__image"
+            src="assets/img/vaidio/hero_hospitality.png"
+            onerror="this.src='assets/img/animation_hospitality Hotel.png'"
+            alt="호스피탈리티 / 호텔" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="solutions.html"><span class="lang-ko">솔루션</span><span class="lang-en">Solutions</span></a></li>
+            <li>
+              <span class="lang-ko">호스피탈리티 / 호텔</span>
+              <span class="lang-en">Hospitality & Hotels</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 주요 지표 -->
+      <section class="section section--light" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="solution-stats">
+            
+            <div class="solution-stat">
+              <div class="solution-stat__number">30+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">AI 분석 엔진</span>
+                <span class="lang-en">AI Analytics Engines</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">Sub-2초</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">영상 검색 속도</span>
+                <span class="lang-en">Search Speed</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">0건</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">카메라 교체</span>
+                <span class="lang-en">Camera Upgrades Required</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">실시간</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">운영 인사이트</span>
+                <span class="lang-en">Operational Insights</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 핵심 기능 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">핵심 기능 및 효과</span>
+              <span class="lang-en">Key Features &amp; Benefits</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">게스트·직원 안전</span>
+                <span class="lang-en">Guest & Staff Safety</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">침입자·무기·유기물 등의 위협을 즉시 감지하고, 블랙리스트 인원을 식별하며 Sub-2초 포렌식 검색으로 조사를 가속화합니다.</span>
+                <span class="lang-en">Instantly detect threats like intruders, weapons, or abandoned objects; flag unauthorized individuals; accelerate investigations with sub-2-second forensic search.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">게스트 경험 향상</span>
+                <span class="lang-en">Enhance Guest Experience</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">체크인·발렛·편의시설 대기 시간을 모니터링하고 실시간 유동인구 데이터로 인력 배치를 최적화합니다.</span>
+                <span class="lang-en">Monitor and reduce wait times at check-in, valet, and amenities; optimize staffing with real-time foot traffic data.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">운영 효율화</span>
+                <span class="lang-en">Operational Efficiency</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">AI 기반 알림으로 수동 모니터링 비용을 줄이고 병목 구간을 파악하여 워크플로우를 최적화합니다.</span>
+                <span class="lang-en">Reduce manual monitoring costs with AI-based alerts; identify bottlenecks and optimize workflows automatically.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 과제 및 솔루션 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">주요 과제와 Vaidio 솔루션</span>
+              <span class="lang-en">Key Challenges &amp; Vaidio Solutions</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">게스트·직원 위협</span>
+                <span class="lang-en">Guest & Staff Threats</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">시설 내 위협, 부상, 미인가 접근이 발생할 수 있습니다.</span>
+                  <span class="lang-en">Threats, injuries, or unauthorized access can occur on property.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">침입 감지·낙상 감지·안면 인식·유기물 분석으로 즉각 대응합니다.</span>
+                  <span class="lang-en">Intrusion detection, fall detection, facial recognition, and abandoned object analytics enable immediate response.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">대기열 및 혼잡 관리</span>
+                <span class="lang-en">Queue & Flow Management</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">긴 대기 시간과 과밀이 게스트 만족도를 저하시킵니다.</span>
+                  <span class="lang-en">Long wait times and overcrowding reduce guest satisfaction.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">혼잡 감지·객체 집계·방향별 흐름 분석으로 대기열을 최적화합니다.</span>
+                  <span class="lang-en">Crowd detection, object counting, and directional flow analysis optimize queue management.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">주차 및 출입 통제</span>
+                <span class="lang-en">Parking & Access Control</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">차량 범죄, 수익 손실, 통로 차단 문제가 발생합니다.</span>
+                  <span class="lang-en">Vehicle crime, lost revenue, and blocked access cause operational issues.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">번호판 인식·차량 모델 분석·침입 감지로 주차 보안과 출입을 통합 관리합니다.</span>
+                  <span class="lang-en">License plate recognition, vehicle model analytics, and intrusion detection provide integrated parking security.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vaidio 선택 이유 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio를 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">기존 인프라 활용</span>
+                <span class="lang-en">Uses Existing Infrastructure</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">비싼 하드웨어 교체 없이 현재 카메라에 AI를 바로 적용합니다.</span>
+                <span class="lang-en">Apply AI to current cameras without expensive hardware replacement.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">원스톱 AI 전환</span>
+                <span class="lang-en">One-Stop AI Transformation</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">카메라를 가리키기만 하면 Vaidio가 즉시 비즈니스 인텔리전스를 생성합니다.</span>
+                <span class="lang-en">Just point a camera and Vaidio immediately generates business intelligence.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">유연한 배포</span>
+                <span class="lang-en">Flexible Deployment</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">온프레미스·클라우드·하이브리드 중 운영 정책에 맞는 방식을 선택합니다.</span>
+                <span class="lang-en">Choose on-premises, cloud, or hybrid deployment to match operational policies.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header" style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">호스피탈리티 / 호텔 AI 영상분석 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Hospitality & Hotels Operations?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 검토해 보세요.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to explore the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">다른 솔루션 보기</span>
+                <span class="lang-en">View All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

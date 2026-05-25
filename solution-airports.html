@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>공항 / 운송 허브 | Futec Solutions Inc.</title>
+    <meta name="description" content="Vaidio AI 영상분석으로 공항 보안 강화 및 여객 운영 효율화를 실현합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .solution-hero__image {
+        width: 100%; max-height: 420px; object-fit: cover; border-radius: 8px;
+        margin-top: 2rem; display: block;
+      }
+      .solution-stats {
+        display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;
+        justify-content: center;
+      }
+      .solution-stat {
+        text-align: center; min-width: 120px;
+      }
+      .solution-stat__number {
+        font-size: 2.4rem; font-weight: 700; color: var(--color-primary, #1a56db);
+      }
+      .solution-stat__label {
+        font-size: 0.9rem; color: #555; margin-top: 0.25rem;
+      }
+      .card__category {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+        color: var(--color-primary, #1a56db); letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card__challenge, .card__solution {
+        margin-bottom: 0.75rem;
+      }
+      @media (max-width: 600px) {
+        .solution-stats { gap: 1rem; }
+        .solution-stat__number { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio로 공항 안전·운영을 혁신합니다</span>
+              <span class="lang-en">Transform Airport Safety and Operations with Vaidio</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">공항은 보안, 여객 흐름, 물류, 법규 준수가 동시에 맞물리는 복합 환경입니다. Vaidio는 기존 영상 인프라를 실시간 데이터로 전환하여 더 안전하고 효율적인 공항 운영을 지원합니다.</span>
+              <span class="lang-en">Airports are complex ecosystems balancing security, passenger flow, logistics, and compliance. Vaidio transforms existing video into real-time data—enabling safer and smarter airport operations.</span>
+            </p>
+            <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의</span>
+                <span class="lang-en">Request a Demo</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">솔루션 목록</span>
+                <span class="lang-en">All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="padding-top:0;">
+          <img
+            class="solution-hero__image"
+            src="assets/img/vaidio/hero_airports.png"
+            onerror="this.src='assets/img/animation_transport hub.png'"
+            alt="공항 / 운송 허브" />
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li><a href="index.html"><span class="lang-ko">홈</span><span class="lang-en">Home</span></a></li>
+            <li><a href="solutions.html"><span class="lang-ko">솔루션</span><span class="lang-en">Solutions</span></a></li>
+            <li>
+              <span class="lang-ko">공항 / 운송 허브</span>
+              <span class="lang-en">Airports & Transport Hubs</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- 주요 지표 -->
+      <section class="section section--light" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="solution-stats">
+            
+            <div class="solution-stat">
+              <div class="solution-stat__number">Sub-2초</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">영상 포렌식 검색</span>
+                <span class="lang-en">Video Forensic Search</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">99.9%</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">시스템 가동률</span>
+                <span class="lang-en">System Uptime</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">30+</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">AI 분석 엔진</span>
+                <span class="lang-en">AI Analytics Engines</span>
+              </div>
+            </div>
+            <div class="solution-stat">
+              <div class="solution-stat__number">24/7</div>
+              <div class="solution-stat__label">
+                <span class="lang-ko">상시 지원</span>
+                <span class="lang-en">Support Coverage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 핵심 기능 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">핵심 기능 및 효과</span>
+              <span class="lang-en">Key Features &amp; Benefits</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">커브사이드 혼잡 관리</span>
+                <span class="lang-en">Curbside Congestion Management</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">차량 번호판 인식(LPR)과 체류 시간 분석으로 픽업·드롭오프 구역에 오래 정차하는 차량을 감지하고 즉시 알림을 전송합니다.</span>
+                <span class="lang-en">Detect and alert on vehicles lingering in pick-up and drop-off zones with LPR and dwell-time tracking to maintain traffic flow.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">여객 줄서기 병목 분석</span>
+                <span class="lang-en">Passenger Line Analytics</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">TSA·체크인·세관에서 실시간 대기열 길이와 흐름을 모니터링하여 인력 재배치 근거를 제공하고 대기 시간을 단축합니다.</span>
+                <span class="lang-en">Monitor real-time queue lengths at TSA, check-in, and customs to reallocate staff and reduce wait times.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">터미널·게이트 흐름 추적</span>
+                <span class="lang-en">Terminal & Gate Flow Tracking</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">체크인부터 게이트까지 이동 경로를 추적하여 레이아웃 계획, 인력 배치, 비정상 운영 시 서비스 신뢰성을 개선합니다.</span>
+                <span class="lang-en">Track movement from check-in to gate to improve layout planning, staffing, and service reliability.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">제한 구역 침입 감지</span>
+                <span class="lang-en">Restricted Area Intrusion Detection</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">객체 감지 및 접근 행동 분석으로 비인가 인원의 출입을 실시간 감지하여 보안 대응 시간을 단축합니다.</span>
+                <span class="lang-en">Detect unauthorized personnel entry in real time using object detection and access behavior analytics to accelerate security response.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">영상 포렌식 검색</span>
+                <span class="lang-en">Video Forensic Search</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">얼굴, 차량, 객체, 이동 경로 등으로 수천 시간의 영상을 즉시 검색하여 조사 시간을 며칠에서 분 단위로 단축합니다.</span>
+                <span class="lang-en">Search thousands of hours of video instantly by face, vehicle, object, or motion path—reducing days of investigation to minutes.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">통합 감시 플랫폼</span>
+                <span class="lang-en">Unified Surveillance Platform</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">대기 시간 추적·LPR·혼잡도 분석에 사용하던 개별 솔루션을 하나의 통합 플랫폼으로 대체하여 IT 부담을 줄입니다.</span>
+                <span class="lang-en">Replace niche tools for wait-time tracking, LPR, and crowd flow with one unified platform to lower IT overhead.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 과제 및 솔루션 -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">주요 과제와 Vaidio 솔루션</span>
+              <span class="lang-en">Key Challenges &amp; Vaidio Solutions</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">커브사이드 교통 혼잡</span>
+                <span class="lang-en">Curbside Traffic Congestion</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">피크 시간대 픽업·드롭오프 구역에 차량이 장시간 정차하여 교통 흐름이 저해됩니다.</span>
+                  <span class="lang-en">Vehicles linger in pick-up and drop-off zones during peak hours, disrupting traffic flow.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">LPR과 체류 시간 분석으로 오래 정차하는 차량을 자동 감지하고 단속 인력에 즉시 알림을 전송합니다.</span>
+                  <span class="lang-en">Automatically detect lingering vehicles with LPR and dwell-time analytics, instantly alerting enforcement staff.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">셔틀 운영 비효율</span>
+                <span class="lang-en">Shuttle Inefficiency</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">실시간 탑승자 수 데이터 부재로 셔틀 배차가 비효율적으로 이루어집니다.</span>
+                  <span class="lang-en">Lack of real-time passenger count data leads to inefficient shuttle scheduling.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">탑승·하차 승객을 자동 집계하여 디스패처에게 실시간 탑승률 데이터를 제공하고 배차를 최적화합니다.</span>
+                  <span class="lang-en">Automatically count boarding and exiting passengers to provide dispatchers with live occupancy data for optimized scheduling.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card card--bordered">
+              <div class="card__category">
+                <span class="lang-ko">내부자 위협</span>
+                <span class="lang-en">Insider Threats</span>
+              </div>
+              <div class="card__challenge">
+                <strong><span class="lang-ko">과제</span><span class="lang-en">Challenge</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">업무 외 시간대 직원 활동, 미인가 출입문 사용, 제한 구역 이동 등 내부 위협을 파악하기 어렵습니다.</span>
+                  <span class="lang-en">Identifying insider threats like off-hours employee activity or unauthorized movement in restricted zones is difficult.</span>
+                </p>
+              </div>
+              <div class="card__solution">
+                <strong><span class="lang-ko">Vaidio 솔루션</span><span class="lang-en">Vaidio Solution</span></strong>
+                <p class="card__text">
+                  <!-- [번역 수정 가능] -->
+                  <span class="lang-ko">이상 행동 패턴을 조기에 감지하여 컴플라이언스 리스크와 평판 훼손을 최소화합니다.</span>
+                  <span class="lang-en">Detect risk patterns early to minimize compliance and reputational exposure.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vaidio 선택 이유 -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">Vaidio를 선택하는 이유</span>
+              <span class="lang-en">Why Choose Vaidio</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+            
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">30+ AI 엔진</span>
+                <span class="lang-en">30+ AI Engines</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">10년 이상 3,000여 개 객체로 훈련된 가장 정확한 AI 분석 엔진을 제공합니다.</span>
+                <span class="lang-en">The most accurate AI engines—trained over 10+ years on 3,000+ objects.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">기존 인프라 호환</span>
+                <span class="lang-en">Works with Existing Infrastructure</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Genetec, Milestone, Avigilon 등 주요 VMS와 호환되며 카메라 교체 없이 바로 적용됩니다.</span>
+                <span class="lang-en">Compatible with existing VMS (Genetec, Milestone, Avigilon, etc.) with no camera replacement needed.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">유연한 배포 방식</span>
+                <span class="lang-en">Flexible Deployment</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">온프레미스, 클라우드, 하이브리드, 엣지 환경 모두에 배포 가능합니다.</span>
+                <span class="lang-en">Deploy on-premises, in the cloud, hybrid, or at the edge.</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">엔터프라이즈급 아키텍처</span>
+                <span class="lang-en">Enterprise-Grade Architecture</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Kubernetes 기반 멀티테넌트 아키텍처로 플로팅 라이선스와 자동 확장을 지원합니다.</span>
+                <span class="lang-en">Kubernetes-based multi-tenant architecture with floating licenses and auto-scaling.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header" style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">공항 / 운송 허브 AI 영상분석 도입을 검토 중이신가요?</span>
+              <span class="lang-en">Ready to Transform Your Airports & Transport Hubs Operations?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가와 함께 귀사 환경에 최적화된 Vaidio 솔루션을 검토해 보세요.</span>
+              <span class="lang-en">Work with Futec Solutions specialists to explore the optimal Vaidio solution for your environment.</span>
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="inquiry.html" class="btn btn--primary">
+                <span class="lang-ko">도입 문의하기</span>
+                <span class="lang-en">Request a Consultation</span>
+              </a>
+              <a href="solutions.html" class="btn btn--secondary">
+                <span class="lang-ko">다른 솔루션 보기</span>
+                <span class="lang-en">View All Solutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
