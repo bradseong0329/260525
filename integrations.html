@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연동 VMS/NVR | Futec Solutions Inc.</title>
+    <meta name="description"
+      content="Vaidio AI Vision Platform이 지원하는 NVR/VMS 연동 파트너 5단계 및 하드웨어 파트너 목록을 확인하세요." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      /* ── 연동 테이블 ── */
+      .int-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -1rem;
+        padding: 0 1rem;
+      }
+      .int-table {
+        width: 100%;
+        min-width: 600px;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      .int-table thead th {
+        background: var(--color-primary, #1a56db);
+        color: #fff;
+        padding: 0.85rem 1rem;
+        text-align: left;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .int-table thead th:first-child {
+        border-radius: 8px 0 0 0;
+        width: 80px;
+        text-align: center;
+      }
+      .int-table thead th:last-child { border-radius: 0 8px 0 0; }
+      .int-table tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.15s;
+      }
+      .int-table tbody tr:hover { background: #f0f4ff; }
+      .int-table tbody tr:last-child { border-bottom: none; }
+      .int-table td {
+        padding: 0.85rem 1rem;
+        vertical-align: top;
+      }
+      .int-table td:first-child {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--color-primary, #1a56db);
+        background: #f8faff;
+        width: 80px;
+        white-space: nowrap;
+      }
+      .int-table td:nth-child(2) {
+        max-width: 320px;
+      }
+      .int-level-badge {
+        display: inline-block;
+        background: var(--color-primary, #1a56db);
+        color: #fff;
+        border-radius: 999px;
+        padding: 0.2rem 0.75rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+      .int-partner-list {
+        list-style: none;
+        padding: 0;
+        margin: 0.4rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      .int-partner-list li {
+        background: #eef2ff;
+        color: #1a56db;
+        border-radius: 4px;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      /* ── 연동 레벨 요약 카드 ── */
+      .int-levels-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .int-level-card {
+        border: 2px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 1.2rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .int-level-card:hover {
+        border-color: var(--color-primary, #1a56db);
+        box-shadow: 0 4px 16px rgba(26,86,219,0.10);
+      }
+      .int-level-card__num {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-primary, #1a56db);
+        line-height: 1;
+      }
+      .int-level-card__title {
+        font-weight: 700;
+        margin: 0.5rem 0 0.3rem;
+        font-size: 0.95rem;
+      }
+      .int-level-card__desc {
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.5;
+      }
+      /* ── 하드웨어 파트너 그리드 ── */
+      .hw-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+      .hw-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 1.2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 90px;
+        text-align: center;
+        transition: box-shadow 0.2s, transform 0.2s;
+        background: #fff;
+      }
+      .hw-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        transform: translateY(-2px);
+      }
+      .hw-card img {
+        max-width: 120px;
+        max-height: 48px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 0.5rem;
+      }
+      .hw-card__name {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #1e293b;
+      }
+      .hw-card__cat {
+        font-size: 0.75rem;
+        color: #6b7280;
+        margin-top: 0.2rem;
+      }
+      /* ── 모바일 ── */
+      @media (max-width: 600px) {
+        .int-levels-grid { grid-template-columns: 1fr 1fr; }
+        .hw-grid { grid-template-columns: 1fr 1fr; }
+        .int-level-card__num { font-size: 1.6rem; }
+      }
+      @media (max-width: 400px) {
+        .int-levels-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero hero--compact">
+        <div class="hero__inner">
+          <div>
+            <h1 class="hero__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">연동 VMS / NVR</span>
+              <span class="lang-en">Integrations</span>
+            </h1>
+            <p class="hero__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">
+                Vaidio AI Vision Platform은 기존 보안 인프라와 원활하게 연동됩니다.
+                NVR/VMS 파트너와의 5단계 연동 수준, 인증된 하드웨어 파트너를 확인하세요.
+              </span>
+              <span class="lang-en">
+                The Vaidio AI Vision Platform integrates seamlessly with your existing security infrastructure.
+                Explore our 5-level NVR/VMS integration framework and certified hardware partners.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__inner">
+          <ol>
+            <li>
+              <a href="index.html">
+                <span class="lang-ko">홈</span>
+                <span class="lang-en">Home</span>
+              </a>
+            </li>
+            <li>
+              <span class="lang-ko">연동 VMS/NVR</span>
+              <span class="lang-en">Integrations</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- ── NVR & VMS 연동 ── -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">NVR &amp; VMS 연동</span>
+              <span class="lang-en">NVR &amp; VMS Integrations</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">
+                Vaidio는 NVR/VMS 파트너와 5단계의 연동 수준을 제공합니다. 기존 인프라를 교체하지 않고도
+                AI 영상분석을 즉시 적용할 수 있습니다.
+              </span>
+              <span class="lang-en">
+                Vaidio offers five levels of integration with NVR/VMS partners,
+                enabling AI video analytics without replacing your existing infrastructure.
+              </span>
+            </p>
+          </div>
+
+          <!-- 5단계 요약 카드 -->
+          <div class="int-levels-grid">
+            <div class="int-level-card">
+              <div class="int-level-card__num">L1</div>
+              <div class="int-level-card__title">
+                <span class="lang-ko">알림 전송</span>
+                <span class="lang-en">Alert Sending</span>
+              </div>
+              <div class="int-level-card__desc">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Vaidio가 VMS로 알림을 전송합니다.</span>
+                <span class="lang-en">Vaidio sends alerts to the VMS.</span>
+              </div>
+            </div>
+            <div class="int-level-card">
+              <div class="int-level-card__num">L2</div>
+              <div class="int-level-card__title">
+                <span class="lang-ko">영상 수신</span>
+                <span class="lang-en">Video Retrieval</span>
+              </div>
+              <div class="int-level-card__desc">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">Vaidio가 VMS에서 영상을 가져옵니다.</span>
+                <span class="lang-en">Vaidio retrieves video from the VMS.</span>
+              </div>
+            </div>
+            <div class="int-level-card">
+              <div class="int-level-card__num">L3</div>
+              <div class="int-level-card__title">
+                <span class="lang-ko">알림 + 영상</span>
+                <span class="lang-en">Alerts + Video</span>
+              </div>
+              <div class="int-level-card__desc">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">알림 전송 및 영상 수신 양방향 연동.</span>
+                <span class="lang-en">Bidirectional: alert sending and video retrieval.</span>
+              </div>
+            </div>
+            <div class="int-level-card">
+              <div class="int-level-card__num">L4</div>
+              <div class="int-level-card__title">
+                <span class="lang-ko">VMS 탭 통합</span>
+                <span class="lang-en">VMS Tab Access</span>
+              </div>
+              <div class="int-level-card__desc">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">VMS UI 내 탭으로 영상 검색 기능 제공.</span>
+                <span class="lang-en">Video search accessible as a tab within the VMS UI.</span>
+              </div>
+            </div>
+            <div class="int-level-card">
+              <div class="int-level-card__num">L5</div>
+              <div class="int-level-card__title">
+                <span class="lang-ko">VMS 내 객체 검색</span>
+                <span class="lang-en">Object Search in VMS</span>
+              </div>
+              <div class="int-level-card__desc">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">VMS UI에서 직접 AI 객체 검색 기능 제공. 최고 수준 연동.</span>
+                <span class="lang-en">AI-powered object search directly within the VMS UI. Highest integration level.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 상세 연동 테이블 -->
+          <div class="int-table-wrap">
+            <table class="int-table">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="lang-ko">레벨</span>
+                    <span class="lang-en">Level</span>
+                  </th>
+                  <th>
+                    <span class="lang-ko">연동 수준 설명</span>
+                    <span class="lang-en">Integration Description</span>
+                  </th>
+                  <th>
+                    <span class="lang-ko">지원 VMS 파트너</span>
+                    <span class="lang-en">VMS Partners</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <!-- Level 1 -->
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <span class="int-level-badge">Level 1</span><br>
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">Vaidio가 VMS로 알림을 전송합니다.</span>
+                    <span class="lang-en">Vaidio sends alerts to the VMS.</span>
+                  </td>
+                  <td>
+                    <ul class="int-partner-list">
+                      <li>Immix</li>
+                      <li>Synology</li>
+                    </ul>
+                  </td>
+                </tr>
+
+                <!-- Level 2 -->
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <span class="int-level-badge">Level 2</span><br>
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">Vaidio가 VMS에서 영상을 수신합니다.</span>
+                    <span class="lang-en">Vaidio retrieves video from the VMS.</span>
+                  </td>
+                  <td>
+                    <ul class="int-partner-list">
+                      <li>ACTi</li>
+                      <li>Digiever</li>
+                      <li>Hanwha NVR</li>
+                      <li>Intellicene Symphia</li>
+                      <li>Iveda Sentir</li>
+                      <li>Kedacom</li>
+                      <li>Mobotix</li>
+                      <li>NUUO (Linux)</li>
+                      <li>QNAP VioStor</li>
+                      <li>Uniview</li>
+                      <li>Vaidio Internal Recorder</li>
+                      <li>VideoInsight</li>
+                    </ul>
+                  </td>
+                </tr>
+
+                <!-- Level 3 -->
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <span class="int-level-badge">Level 3</span><br>
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">알림 전송 및 영상 수신 양방향 연동.</span>
+                    <span class="lang-en">Vaidio sends alerts and retrieves video.</span>
+                  </td>
+                  <td>
+                    <ul class="int-partner-list">
+                      <li>Avigilon</li>
+                      <li>Axis ACS</li>
+                      <li>Bosch</li>
+                      <li>Digifort</li>
+                      <li>Exacq</li>
+                      <li>Ganz CORTROL</li>
+                      <li>Luxriot EVO</li>
+                      <li>Pelco</li>
+                      <li>Qognify Ocularis</li>
+                    </ul>
+                  </td>
+                </tr>
+
+                <!-- Level 4 -->
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <span class="int-level-badge">Level 4</span><br>
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">
+                      알림 전송 및 영상 수신, VMS UI 내 탭으로 영상 검색 기능 제공.
+                    </span>
+                    <span class="lang-en">
+                      Vaidio sends alerts, retrieves video, and can be accessed as a tab in the VMS to conduct video search.
+                    </span>
+                  </td>
+                  <td>
+                    <ul class="int-partner-list">
+                      <li>AMAG Symmetry CompleteView</li>
+                      <li>Salient CompleteView</li>
+                    </ul>
+                  </td>
+                </tr>
+
+                <!-- Level 5 -->
+                <tr>
+                  <td>5</td>
+                  <td>
+                    <span class="int-level-badge" style="background:#0e3a8c;">Level 5</span><br>
+                    <!-- [번역 수정 가능] -->
+                    <span class="lang-ko">
+                      알림 전송, 영상 수신, VMS UI에서 직접 AI 객체 검색 — 최고 수준 연동.
+                    </span>
+                    <span class="lang-en">
+                      Vaidio sends alerts, retrieves video, and enables object search directly in the VMS UI — highest level.
+                    </span>
+                  </td>
+                  <td>
+                    <ul class="int-partner-list">
+                      <li>Digital Watchdog Spectrum</li>
+                      <li>Geutebrück G-Core &amp; G-SIM</li>
+                      <li>Genetec Security Center</li>
+                      <li>IDIS</li>
+                      <li>Hanwha Wisenet Wave</li>
+                      <li>Mirasys</li>
+                      <li>Milestone XProtect</li>
+                      <li>Network Optix Nx Witness</li>
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div><!-- /int-table-wrap -->
+
+          <!-- 참고 안내 -->
+          <p style="margin-top:1.2rem; font-size:0.85rem; color:#6b7280;">
+            <!-- [번역 수정 가능] -->
+            <span class="lang-ko">
+              ※ 위 목록은 Vaidio 공식 연동 파트너 기준이며, 추가 연동 파트너는 지속적으로 확대되고 있습니다.
+              특정 VMS/NVR 연동 가능 여부는 퓨텍솔루션즈로 문의하세요.
+            </span>
+            <span class="lang-en">
+              ※ The list above reflects official Vaidio integration partners and is continuously expanding.
+              Contact Futec Solutions to inquire about integration availability for your specific VMS/NVR.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ── 하드웨어 파트너 ── -->
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">하드웨어 파트너</span>
+              <span class="lang-en">Hardware Partners</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">
+                Vaidio는 아래 하드웨어 파트너와의 상호 테스트 및 인증을 완료하여 안정적인 AI 영상분석 환경을 보장합니다.
+              </span>
+              <span class="lang-en">
+                Vaidio has completed mutual testing and certification with the following hardware partners
+                to ensure stable AI video analytics deployments.
+              </span>
+            </p>
+          </div>
+
+          <div class="hw-grid">
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_hpe.png"
+                onerror="this.style.display='none'"
+                alt="HPE" loading="lazy" />
+              <div class="hw-card__name">HPE</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">서버</span>
+                <span class="lang-en">Server</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_nvidia.png"
+                onerror="this.style.display='none'"
+                alt="NVIDIA" loading="lazy" />
+              <div class="hw-card__name">NVIDIA</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">GPU</span>
+                <span class="lang-en">GPU</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_intel.png"
+                onerror="this.style.display='none'"
+                alt="Intel" loading="lazy" />
+              <div class="hw-card__name">Intel</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">CPU / 가속기</span>
+                <span class="lang-en">CPU / Accelerator</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_dell.png"
+                onerror="this.style.display='none'"
+                alt="Dell" loading="lazy" />
+              <div class="hw-card__name">Dell</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">서버</span>
+                <span class="lang-en">Server</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_advantech.png"
+                onerror="this.style.display='none'"
+                alt="Advantech" loading="lazy" />
+              <div class="hw-card__name">Advantech</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">엣지 컴퓨팅</span>
+                <span class="lang-en">Edge Computing</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_adlink.png"
+                onerror="this.style.display='none'"
+                alt="ADLINK" loading="lazy" />
+              <div class="hw-card__name">ADLINK</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">엣지 AI</span>
+                <span class="lang-en">Edge AI</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_avermedia.png"
+                onerror="this.style.display='none'"
+                alt="AVerMedia" loading="lazy" />
+              <div class="hw-card__name">AVerMedia</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">캡처 카드</span>
+                <span class="lang-en">Capture Card</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_asus.png"
+                onerror="this.style.display='none'"
+                alt="ASUS" loading="lazy" />
+              <div class="hw-card__name">ASUS</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">엣지 AI</span>
+                <span class="lang-en">Edge AI</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_gigabyte.png"
+                onerror="this.style.display='none'"
+                alt="Gigabyte" loading="lazy" />
+              <div class="hw-card__name">Gigabyte</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">서버 / 워크스테이션</span>
+                <span class="lang-en">Server / Workstation</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_nexcom.png"
+                onerror="this.style.display='none'"
+                alt="NEXCOM" loading="lazy" />
+              <div class="hw-card__name">NEXCOM</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">엣지 컴퓨팅</span>
+                <span class="lang-en">Edge Computing</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_leadtek.png"
+                onerror="this.style.display='none'"
+                alt="Leadtek" loading="lazy" />
+              <div class="hw-card__name">Leadtek</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">GPU 보드</span>
+                <span class="lang-en">GPU Board</span>
+              </div>
+            </div>
+
+            <div class="hw-card">
+              <img src="assets/img/vaidio/logos/logo_ncxx.png"
+                onerror="this.style.display='none'"
+                alt="NCXX" loading="lazy" />
+              <div class="hw-card__name">NCXX</div>
+              <div class="hw-card__cat">
+                <span class="lang-ko">임베디드 시스템</span>
+                <span class="lang-en">Embedded Systems</span>
+              </div>
+            </div>
+
+          </div><!-- /hw-grid -->
+
+          <p style="margin-top:1.5rem; font-size:0.85rem; color:#6b7280;">
+            <!-- [번역 수정 가능] -->
+            <span class="lang-ko">
+              ※ 하드웨어 파트너 로고는 각 제조사 상표입니다.
+              특정 하드웨어 구성에 대한 문의는 퓨텍솔루션즈로 연락해 주세요.
+            </span>
+            <span class="lang-en">
+              ※ Hardware partner logos are trademarks of their respective manufacturers.
+              Contact Futec Solutions for inquiries about specific hardware configurations.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ── 연동 FAQ ── -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">연동 관련 자주 묻는 질문</span>
+              <span class="lang-en">Integration FAQ</span>
+            </h2>
+          </div>
+          <div class="card-grid">
+
+            <div class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">기존 VMS를 교체해야 하나요?</span>
+                <span class="lang-en">Do I need to replace my existing VMS?</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">
+                  아닙니다. Vaidio는 기존 VMS와 연동하여 작동합니다. Genetec, Milestone, Avigilon,
+                  Hanwha 등 주요 VMS를 포함한 30개 이상의 파트너와 인증된 연동을 제공합니다.
+                </span>
+                <span class="lang-en">
+                  No. Vaidio integrates with your existing VMS. We offer certified integrations with
+                  30+ partners including Genetec, Milestone, Avigilon, Hanwha, and more.
+                </span>
+              </p>
+            </div>
+
+            <div class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">어떤 연동 수준을 선택해야 하나요?</span>
+                <span class="lang-en">Which integration level should I choose?</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">
+                  사용 중인 VMS에 따라 지원 가능한 연동 수준이 결정됩니다. 가능하면 Level 5를 권장하며,
+                  VMS UI 내에서 직접 AI 객체 검색을 활용할 수 있는 가장 완전한 경험을 제공합니다.
+                </span>
+                <span class="lang-en">
+                  The supported integration level depends on your VMS. Level 5 is recommended where available,
+                  providing the most complete experience with AI object search directly within the VMS UI.
+                </span>
+              </p>
+            </div>
+
+            <div class="card card--bordered">
+              <h3 class="card__title">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">목록에 없는 VMS도 연동 가능한가요?</span>
+                <span class="lang-en">Can Vaidio integrate with a VMS not on the list?</span>
+              </h3>
+              <p class="card__text">
+                <!-- [번역 수정 가능] -->
+                <span class="lang-ko">
+                  Vaidio는 RTSP/ONVIF 표준을 지원하는 대부분의 IP 카메라 및 NVR과 직접 연결이 가능합니다.
+                  목록에 없는 VMS 연동은 퓨텍솔루션즈로 문의해 주세요.
+                </span>
+                <span class="lang-en">
+                  Vaidio can connect directly to most IP cameras and NVRs that support RTSP/ONVIF standards.
+                  For VMS not on the list, please contact Futec Solutions.
+                </span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 연락처 CTA ── -->
+      <section class="section section--muted">
+        <div class="container">
+          <div style="text-align:center;">
+            <h2 class="section__title">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">현재 사용 중인 VMS/NVR과의 연동을 확인하고 싶으신가요?</span>
+              <span class="lang-en">Want to verify integration with your current VMS/NVR?</span>
+            </h2>
+            <p class="section__subtitle">
+              <!-- [번역 수정 가능] -->
+              <span class="lang-ko">퓨텍솔루션즈 전문가가 귀사의 기존 인프라 환경을 분석하고 최적의 연동 방안을 제안해 드립니다.</span>
+              <span class="lang-en">Futec Solutions specialists will analyze your existing infrastructure and recommend the optimal integration approach.</span>
+            </p>
+            <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+              <a href="contact.html" class="btn btn--primary">
+                <span class="lang-ko">연락처 보기</span>
+                <span class="lang-en">Contact Us</span>
+              </a>
+              <a href="platform.html" class="btn btn--secondary">
+                <span class="lang-ko">플랫폼 알아보기</span>
+                <span class="lang-en">Explore the Platform</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
